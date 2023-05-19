@@ -62,18 +62,39 @@ void setup()
     setupButtons(true);
   #endif
   //
-  #if SERIAL1_DEBUG
-    // Initialize Serial1 (computer side) for debugin messages //
-    //
-    Serial1.begin(9600);
-    Serial1.println("Startup!");
-  #endif
+  memset(buttonsCounter, 0, sizeof(buttonsCounter));
   //
-  memset(buttonsStatus, 0, sizeof(buttonsStatus));
+  #if SET_DEFAULT_EEPROM
+    for (byte xx = 0; xx < MAX_PAGES; xx++)
+    {
+      buttonsStruct[xx][0].type = kActionOnRelease;
+      buttonsStruct[xx][0].value1 = kPreviousPage;
+      //
+      buttonsStruct[xx][1].type = kActionOnRelease;
+      buttonsStruct[xx][1].value1 = kNextPage;
+      //
+      for (byte yy = 0; yy < 16; yy++)
+      {
+        #if DEFAULT_EEPROM_NOTES_ONOFF
+          buttonsStruct[xx][yy + 2].type = kNoteOnOff;
+          buttonsStruct[xx][yy + 2].value1 = 36 + (xx * DEFAULT_NOTES_OFFSET_PER_PAGE) + yy;
+        #else
+          buttonsStruct[xx][yy + 2].type = kMIDI_CC;
+          buttonsStruct[xx][yy + 2].value1 = 1 + (xx * 16) + yy;
+        #endif
+        //
+        if (xx == 1) buttonsStruct[xx][yy + 2].colorOff[0] = buttonsStruct[xx][yy + 2].colorOff[1] = kRed_Soft;
+        else if (xx == 2) buttonsStruct[xx][yy + 2].colorOff[0] = buttonsStruct[xx][yy + 2].colorOff[1] = kGreen_Soft;
+        else if (xx == 3) buttonsStruct[xx][yy + 2].colorOff[0] = buttonsStruct[xx][yy + 2].colorOff[1] = kBlue_Soft;
+      }
+    }
+  #endif
   //
   clearPixels();
   //
   #if INTRO_ANIMATION
     pixelsIntroAnimation();
   #endif
+  //
+  updateButtonsOffColor();
 }

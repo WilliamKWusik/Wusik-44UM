@@ -1,38 +1,45 @@
 /*
- * Created by William Kalfelz @ Wusik.com (c) 2023
- */
+   Created by William Kalfelz @ Wusik.com (c) 2023
+*/
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
-void loop() 
+inline void checkButton(byte pin)
 {
-  bool hasButtonDown = false;
-  //
-  #define WCHECKBUTTON(pin)\
-    if (digitalRead(pin) == LOW && buttonsStatus[buttonsList[pin]] < 250)\
-    { buttonsStatus[buttonsList[pin]]++; if (buttonsStatus[buttonsList[pin]] > 10) hasButtonDown = true; }\
-    else if (buttonsStatus[buttonsList[pin]] > 0) buttonsStatus[buttonsList[pin]]--
-  //
-  WCHECKBUTTON(0);
-  WCHECKBUTTON(1);
-  WCHECKBUTTON(2);
-  WCHECKBUTTON(3);
-  WCHECKBUTTON(4);
-  WCHECKBUTTON(5);
-  WCHECKBUTTON(6);
-  WCHECKBUTTON(7);
-  WCHECKBUTTON(8);
-  WCHECKBUTTON(9);
-  WCHECKBUTTON(10);
-  WCHECKBUTTON(14);
-  WCHECKBUTTON(15);
-  WCHECKBUTTON(16);
-  WCHECKBUTTON(18);
-  WCHECKBUTTON(19);
-  WCHECKBUTTON(20);
-  WCHECKBUTTON(21);
-  //
-  if (hasButtonDown)
+  if (digitalRead(pin) == LOW)
   {
-    Serial1.println("Button Down!");
+    if (buttonsCounter[buttonsList[pin]] < 100) buttonsCounter[buttonsList[pin]]++;
+    if (buttonsCounter[buttonsList[pin]] == 10) setVarBit(buttonsDown, buttonsList[pin], true);
   }
+  else if (buttonsCounter[buttonsList[pin]] > 0)
+  {
+    buttonsCounter[buttonsList[pin]]--;
+    if (buttonsCounter[buttonsList[pin]] == 9) setVarBit(buttonsReleased, buttonsList[pin], true);
+  }
+}
+//
+// ------------------------------------------------------------------------------------------------------------------------------------
+void loop()
+{
+  checkButton(0);
+  checkButton(1);
+  checkButton(2);
+  checkButton(3);
+  checkButton(4);
+  checkButton(5);
+  checkButton(6);
+  checkButton(7);
+  checkButton(8);
+  checkButton(9);
+  checkButton(10);
+  checkButton(14);
+  checkButton(15);
+  checkButton(16);
+  checkButton(18);
+  checkButton(19);
+  checkButton(20);
+  checkButton(21);
+  //
+  if (currentMode == 0) normalMode();
+  //
+  buttonsDown = buttonsReleased = 0;
 }
