@@ -3,20 +3,22 @@
  */
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
+#define CURRENT_DATA_VERSION 1
 #define RGBLEDS_PIN 30
 #define RGBLEDS_COUNT 48
-#define ENABLE_BUTTON_CONFIG_STARTUP 0
 #define INTRO_ANIMATION 0
+#define INTRO_RANDOM 1
 #define MAX_BUTTON_PIN 21
-#define SET_DEFAULT_EEPROM 1
 #define DEFAULT_EEPROM_NOTES_ONOFF 1
-#define MAX_PAGES 4
+#define MAX_PAGES 5
 #define DEFAULT_NOTES_OFFSET_PER_PAGE 12
+#define FACTORY_RESET 0
+#define MAX_CUSTOM_COLORS 24
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
 enum
 {
-  kOff = 0, kWhite, kRed, kGreen, kBlue, kRed_Soft, kGreen_Soft, kBlue_Soft,
+  kOff = 0, kWhite, kRed, kGreen, kBlue, kRed_Soft, kGreen_Soft, kBlue_Soft, kLeftBars_White, kRightBars_White, kLeftBars_Off, kRightBars_Off, kCustom1,
   kNothing = 0, kNoteOnOff, kMIDI_CC, kPitchBend, AfterTouch, kActionOnRelease, kMIDI_CC_Value_Up, kMIDI_CC_Value_Down,
   kNextPage = 0, kPreviousPage, kPanic
 };

@@ -9,9 +9,12 @@ void updateButtonsOffColor()
   //
   for (byte xx = 0; xx < 16; xx++)
   {
-    if (buttonsStruct[currentPage][xx + 2].colorOff[0] != kOff) strip.setPixelColor(rgbLEDsList[xx][0], getColor(buttonsStruct[currentPage][xx + 2].colorOff[0]));
-    if (buttonsStruct[currentPage][xx + 2].colorOff[1] != kOff) strip.setPixelColor(rgbLEDsList[xx][1], getColor(buttonsStruct[currentPage][xx + 2].colorOff[1]));
+    strip.setPixelColor(rgbLEDsList[xx][0], getColor(buttonsStruct[currentPage][xx + 2].colorOff));
+    strip.setPixelColor(rgbLEDsList[xx][1], getColor(buttonsStruct[currentPage][xx + 2].colorOff));
   }
+  //
+  checkButtonBar(buttonsStruct[currentPage][0].colorOff);
+  checkButtonBar(buttonsStruct[currentPage][1].colorOff);
   //
   strip.show();
 }
@@ -19,17 +22,21 @@ void updateButtonsOffColor()
 // ------------------------------------------------------------------------------------------------------------------------------------
 uint32_t getColor(byte colorID)
 {
+  uint32_t returnColor = 0;
+  //
   switch(colorID)
   {
-    case kOff:        strip.Color(  0,     0,     0); break;
-    case kWhite:      strip.Color(255,   255,   255); break;
-    case kRed:        strip.Color(255,     0,     0); break;
-    case kGreen:      strip.Color(  0,   255,     0); break;
-    case kBlue:       strip.Color(  0,     0,   255); break;
-    case kRed_Soft:   strip.Color( 55,     0,     0); break;
-    case kGreen_Soft: strip.Color(  0,    55,     0); break;
-    case kBlue_Soft:  strip.Color(  0,     0,    55); break;
+    case kOff:        returnColor = strip.Color(  0,     0,     0); break;
+    case kWhite:      returnColor = strip.Color(255,   255,   255); break;
+    case kRed:        returnColor = strip.Color(255,     0,     0); break;
+    case kGreen:      returnColor = strip.Color(  0,   255,     0); break;
+    case kBlue:       returnColor = strip.Color(  0,     0,   255); break;
+    case kRed_Soft:   returnColor = strip.Color( 25,     0,     0); break;
+    case kGreen_Soft: returnColor = strip.Color(  0,    25,     0); break;
+    case kBlue_Soft:  returnColor = strip.Color(  0,     0,    25); break;
   }
+  //
+  return returnColor;
 }
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
@@ -104,6 +111,29 @@ void colorBarWhite(byte offset)
   }
   //
   strip.show();
+}
+//
+// ------------------------------------------------------------------------------------------------------------------------------------
+void colorBarOff(byte offset)
+{
+  for (byte bb = 0; bb < 8; bb++)
+  {
+    strip.setPixelColor(32 + bb + offset, strip.Color(0,   0,   0));
+  }
+  //
+  strip.show();
+}
+//
+// ------------------------------------------------------------------------------------------------------------------------------------
+void checkButtonBar(byte type)
+{
+  switch (type)
+  {
+    case kLeftBars_White: colorBarWhite(0); break;
+    case kRightBars_White: colorBarWhite(8); break;
+    case kLeftBars_Off: colorBarOff(0); break;
+    case kRightBars_Off: colorBarOff(8); break;
+  } 
 }
 //
 // ------------------------------------------------------------------------------------------------------------------------------------

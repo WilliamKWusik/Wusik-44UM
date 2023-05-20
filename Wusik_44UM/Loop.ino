@@ -40,6 +40,7 @@ void loop()
   checkButton(21);
   //
   if (currentMode == 0) normalMode();
+  //if (flushMIDI) { MidiUSB.flush(); flushMIDI = false; }
   //
   buttonsDown = buttonsReleased = 0;
 }
