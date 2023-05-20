@@ -11,15 +11,13 @@ void normalMode_ButtonDown(byte button)
     strip.setPixelColor(rgbLEDsList[button - 2][1], getColor(buttonsStruct[currentPage][button].colorOn));   
     strip.show();
   }
-  else
-  {
-    checkButtonBar(buttonsStruct[currentPage][button].colorOn);
-  }
   //
   switch(buttonsStruct[currentPage][button].type)
   {
     case kNoteOnOff: midiSendNote(button, true); break;
     case kMIDI_CC: midiSendCC(button, 127); break;
+    case kActionOnHold: normalMode_Action(buttonsStruct[currentPage][button].value1, button); break;
+    //
     case kMIDI_CC_Flip: 
       if (buttonsStruct[currentPage][button].valueChar > 0) 
       {
@@ -44,25 +42,30 @@ void normalMode_ButtonRelease(byte button)
     strip.setPixelColor(rgbLEDsList[button - 2][1], getColor(buttonsStruct[currentPage][button].colorOff)); 
     strip.show();
   }
-  else
-  {
-    checkButtonBar(buttonsStruct[currentPage][button].colorOn);
-  }
   //
   switch(buttonsStruct[currentPage][button].type)
   {
-    case kActionOnRelease: normalMode_Action(buttonsStruct[currentPage][button].value1); break;
+    case kActionOnRelease: normalMode_Action(buttonsStruct[currentPage][button].value1, button); break;
     case kNoteOnOff: midiSendNote(button, false); break;
+    //
+    case kActionOnHold: 
+      if (buttonsStruct[currentPage][button].value1 == kGoToPage)
+      {
+        currentPage = buttonsStruct[currentPage][button].valueChar;
+        updateButtonsOffColor();
+      }
+      break;
   }
 }
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
-void normalMode_Action(byte action)
+void normalMode_Action(byte action, byte button)
 {
   switch(action)
   {
     case kNextPage: if (currentPage < (MAX_PAGES - 1)) currentPage++; break;
     case kPreviousPage: if (currentPage > 0) currentPage--; break;
+    case kGoToPage: currentPage = buttonsStruct[currentPage][button].value2; break;
   }
   //
   updateButtonsOffColor();
@@ -109,6 +112,7 @@ void normalMode()
             colorPixelWhite(0);
             colorPixelWhite(1);
             colorPixelWhite(2);
+            colorPixelWhite(3);
             currentMode = 1;
           }
         }

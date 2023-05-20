@@ -13,9 +13,6 @@ void updateButtonsOffColor()
     strip.setPixelColor(rgbLEDsList[xx][1], getColor(buttonsStruct[currentPage][xx + 2].colorOff));
   }
   //
-  checkButtonBar(buttonsStruct[currentPage][0].colorOff);
-  checkButtonBar(buttonsStruct[currentPage][1].colorOff);
-  //
   strip.show();
 }
 //
@@ -103,58 +100,47 @@ void flashRed(byte times)
 }
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
-void colorBarWhite(byte offset)
-{
-  for (byte bb = 0; bb < 8; bb++)
-  {
-    strip.setPixelColor(32 + bb + offset, strip.Color(255,   255,   255));
-  }
-  //
-  strip.show();
-}
-//
-// ------------------------------------------------------------------------------------------------------------------------------------
-void colorBarOff(byte offset)
-{
-  for (byte bb = 0; bb < 8; bb++)
-  {
-    strip.setPixelColor(32 + bb + offset, strip.Color(0,   0,   0));
-  }
-  //
-  strip.show();
-}
-//
-// ------------------------------------------------------------------------------------------------------------------------------------
-void checkButtonBar(byte type)
-{
-  switch (type)
-  {
-    case kLeftBars_White: colorBarWhite(0); break;
-    case kRightBars_White: colorBarWhite(8); break;
-    case kLeftBars_Off: colorBarOff(0); break;
-    case kRightBars_Off: colorBarOff(8); break;
-  } 
-}
-//
-// ------------------------------------------------------------------------------------------------------------------------------------
 #if INTRO_ANIMATION
   void pixelsIntroAnimation()
   {
     for (byte xx = 0; xx < 16; xx++)
     {
       colorPixelWhite(rgbsIntroAnimation[xx]);
-      delay(80);
+      delay(INTRO_ANIMATION_SPEED);
     }
     //
-    colorBarWhite(0);
-    colorBarWhite(8);
-    delay(400);
+    delay(INTRO_ANIMATION_SPEED_HOLD);
     //
     for (byte xx = 0; xx < 16; xx++)
     {
-      colorPixelClear(rgbsIntroAnimation[xx]);
-      delay(60);
-    }   
+      strip.setPixelColor(rgbLEDsList[rgbsIntroAnimation[xx]][0], strip.Color(255, 0, 0));
+      strip.setPixelColor(rgbLEDsList[rgbsIntroAnimation[xx]][1], strip.Color(255, 0, 0));
+      //
+      strip.show();
+      delay(INTRO_ANIMATION_SPEED);
+    }
+    //
+    int redS[16];
+    for (byte xx = 0; xx < 16; xx++) { redS[xx] = 255; }
+    //
+    while (1)
+    {
+      for (byte xx = 0; xx < 16; xx++)
+      {
+        redS[xx] -= random(0, 50);
+        if (redS[xx] < 0) redS[xx] = 0;
+        //
+        strip.setPixelColor(rgbLEDsList[xx][0], strip.Color(redS[xx], 0, 0));
+        strip.setPixelColor(rgbLEDsList[xx][1], strip.Color(redS[xx], 0, 0));
+      }
+      //
+      strip.show();
+      delay(80);
+      //
+      bool allZero = true;
+      for (byte xx = 0; xx < 16; xx++) { if (redS[xx] > 0) { allZero = false; break; } }
+      if (allZero) break;
+    }
     //
     clearPixels();
   }

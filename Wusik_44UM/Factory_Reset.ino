@@ -14,8 +14,8 @@
     {
       clearPixels();
       //
-      if (xx == 0) colorBarWhite(8);
-      else if (xx == 1) colorBarWhite(0);
+      if (xx == 0) { colorPixelWhite(0); colorPixelWhite(4); colorPixelWhite(8); colorPixelWhite(12); }
+      else if (xx == 1) { colorPixelWhite(3); colorPixelWhite(7); colorPixelWhite(11); colorPixelWhite(15); }
       else colorPixelWhite(xx - 2);
       //
       while (1)
@@ -55,29 +55,25 @@
     {
       buttonsStruct[xx][0].type = kActionOnRelease;
       buttonsStruct[xx][0].value1 = kPreviousPage;
-      buttonsStruct[xx][0].colorOn = kRightBars_White;
-      buttonsStruct[xx][0].colorOff = kRightBars_Off;
       //
       buttonsStruct[xx][1].type = kActionOnRelease;
       buttonsStruct[xx][1].value1 = kNextPage;
-      buttonsStruct[xx][1].colorOn = kLeftBars_White;
-      buttonsStruct[xx][1].colorOff = kLeftBars_Off;
       //
       for (byte yy = 0; yy < 16; yy++)
       {
-        #if DEFAULT_EEPROM_NOTES_ONOFF
-          buttonsStruct[xx][yy + 2].type = kNoteOnOff;
-          buttonsStruct[xx][yy + 2].value1 = 36 + (xx * DEFAULT_NOTES_OFFSET_PER_PAGE) + yy;
-          buttonsStruct[xx][yy + 2].value2 = 127;
-        #else
-          buttonsStruct[xx][yy + 2].type = kMIDI_CC;
-          buttonsStruct[xx][yy + 2].value1 = 1 + (xx * 16) + yy;
-        #endif
+        /*buttonsStruct[xx][yy + 2].type = kNoteOnOff;
+        buttonsStruct[xx][yy + 2].value1 = 36 + (xx * 12) + yy;
+        buttonsStruct[xx][yy + 2].value2 = 127;*/
+        //
+        buttonsStruct[xx][yy + 2].type = kMIDI_CC_Flip;
+        buttonsStruct[xx][yy + 2].value1 = 1 + (xx * 16) + yy;      
         //
         if (xx == 1) buttonsStruct[xx][yy + 2].colorOff = buttonsStruct[xx][yy + 2].colorOff = kRed_Soft;
         else if (xx == 2) buttonsStruct[xx][yy + 2].colorOff = buttonsStruct[xx][yy + 2].colorOff = kGreen_Soft;
         else if (xx == 3) buttonsStruct[xx][yy + 2].colorOff = buttonsStruct[xx][yy + 2].colorOff = kBlue_Soft;
         else if (xx == 4 && (yy == 0 || yy == 3 || yy == 15 || yy == 12)) buttonsStruct[xx][yy + 2].colorOff = buttonsStruct[xx][yy + 2].colorOff = kRed_Soft;
+        else if (xx == 5 && (yy == 0 || yy == 3 || yy == 15 || yy == 12)) buttonsStruct[xx][yy + 2].colorOff = buttonsStruct[xx][yy + 2].colorOff = kGreen_Soft;
+        else if (xx == 6 && (yy == 0 || yy == 3 || yy == 15 || yy == 12)) buttonsStruct[xx][yy + 2].colorOff = buttonsStruct[xx][yy + 2].colorOff = kBlue_Soft;
       }
     }    
     //

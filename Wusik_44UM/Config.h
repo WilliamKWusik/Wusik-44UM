@@ -3,24 +3,24 @@
  */
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
+#define FACTORY_RESET 0 // When you set this, upon startup the unit will ask the buttons to be pressed in this order: small-top-left, small-top-right, large-top-right to large-top-left, continue on the next line left and so on //
+//
 #define CURRENT_DATA_VERSION 1
 #define RGBLEDS_PIN 30
-#define RGBLEDS_COUNT 48
-#define INTRO_ANIMATION 0
-#define INTRO_RANDOM 1
+#define RGBLEDS_COUNT 32
+#define INTRO_ANIMATION 1
+#define INTRO_ANIMATION_SPEED 40
+#define INTRO_ANIMATION_SPEED_HOLD 200
 #define MAX_BUTTON_PIN 21
-#define DEFAULT_EEPROM_NOTES_ONOFF 1
-#define MAX_PAGES 5
-#define DEFAULT_NOTES_OFFSET_PER_PAGE 12
-#define FACTORY_RESET 0
-#define MAX_CUSTOM_COLORS 24
+#define MAX_PAGES 7
+#define MAX_CUSTOM_COLORS 16
 #define HOLD_TOP_BUTTONS_SWAP_CONFIGURATION 1
 #define BUTTON_DEBOUCE_COUNTER 60
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
 enum
 {
-  kOff = 0, kWhite, kRed, kGreen, kBlue, kRed_Soft, kGreen_Soft, kBlue_Soft, kLeftBars_White, kRightBars_White, kLeftBars_Off, kRightBars_Off, kCustom1,
-  kNothing = 0, kNoteOnOff, kMIDI_CC, kPitchBend, AfterTouch, kActionOnRelease, kMIDI_CC_Value_Up, kMIDI_CC_Value_Down, kMIDI_CC_Flip,
-  kNextPage = 0, kPreviousPage, kPanic
+  kOff = 0, kWhite, kRed, kGreen, kBlue, kRed_Soft, kGreen_Soft, kBlue_Soft, kCustom1,
+  kNothing = 0, kNoteOnOff, kMIDI_CC, kActionOnRelease, kMIDI_CC_Value_Up, kMIDI_CC_Value_Down, kMIDI_CC_Flip, kActionOnHold,
+  kNextPage = 0, kPreviousPage, kPanic, kGoToPage
 };

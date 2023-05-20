@@ -12,16 +12,37 @@
       {
         if (getVarBit(buttonsDown, bb))
         {     
-          if (bb == 2 || bb == 3 || bb == 4)
+          if (bb == 2 || bb == 3 || bb == 4 || bb == 5)
           {
             for (byte xx = 0; xx < MAX_PAGES; xx++)
             {
+              if (bb == 5)
+              {
+                buttonsStruct[xx][0].type = kActionOnHold;
+                buttonsStruct[xx][0].value1 = kGoToPage;
+                buttonsStruct[xx][0].value2 = 1;
+                buttonsStruct[xx][0].valueChar = 0;
+                //
+                buttonsStruct[xx][1].type = kActionOnHold;
+                buttonsStruct[xx][1].value1 = kGoToPage;
+                buttonsStruct[xx][1].value2 = 2;
+                buttonsStruct[xx][1].valueChar = 0;
+              }
+              else
+              {
+                buttonsStruct[xx][0].type = kActionOnRelease;
+                buttonsStruct[xx][0].value1 = kPreviousPage;
+                //
+                buttonsStruct[xx][1].type = kActionOnRelease;
+                buttonsStruct[xx][1].value1 = kNextPage;
+              }
+              //
               for (byte yy = 0; yy < 16; yy++)
               {
                 if (bb == 2)
                 {
                   buttonsStruct[xx][yy + 2].type = kNoteOnOff;
-                  buttonsStruct[xx][yy + 2].value1 = 36 + (xx * DEFAULT_NOTES_OFFSET_PER_PAGE) + yy;
+                  buttonsStruct[xx][yy + 2].value1 = 36 + (xx * 12) + yy;
                   buttonsStruct[xx][yy + 2].value2 = 127;
                 }
                 else if (bb == 3)
@@ -29,7 +50,7 @@
                   buttonsStruct[xx][yy + 2].type = kMIDI_CC;
                   buttonsStruct[xx][yy + 2].value1 = 1 + (xx * 16) + yy;
                 }
-                else
+                else if (bb == 4 || bb == 5)
                 {
                   buttonsStruct[xx][yy + 2].type = kMIDI_CC_Flip;
                   buttonsStruct[xx][yy + 2].value1 = 1 + (xx * 16) + yy;
