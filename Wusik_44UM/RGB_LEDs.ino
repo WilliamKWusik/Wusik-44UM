@@ -1,6 +1,52 @@
 /*
  * Created by William Kalfelz @ Wusik.com (c) 2023
  */
+ //
+// ------------------------------------------------------------------------------------------------------------------------------------
+void RGBBlink()
+{
+  if (rgbBlink > 0)
+  {
+    rgbBlinkCounter++;
+    rgbBlinkCounterFast++;
+    //
+    if (rgbBlinkCounterFast > RGB_BLINK_FAST)
+    {
+      bool hasOne = false;
+      rgbBlinkCounterFast = 0;
+      //
+      for (byte xx = 0; xx < 16; xx++)
+      {
+        if (getVarBit(rgbBlinkFast, xx) && getVarBit(rgbBlink, xx))
+        {  
+          hasOne = true;       
+          if (rgbBlinkStatusFast) colorPixelNoShow(xx, getColor(rgbBlinkColor[xx])); else colorPixelClearNoShow(xx);
+        }
+      }
+      //
+      rgbBlinkStatusFast = !rgbBlinkStatusFast;
+      if (hasOne) strip.show();
+    }
+    //   
+    if (rgbBlinkCounter > RGB_BLINK_SLOW)
+    {
+      bool hasOne = false;
+      rgbBlinkCounter = 0;
+      //
+      for (byte xx = 0; xx < 16; xx++)
+      {
+        if (!getVarBit(rgbBlinkFast, xx) && getVarBit(rgbBlink, xx))
+        {         
+          hasOne = true;
+          if (rgbBlinkStatus) colorPixelNoShow(xx, getColor(rgbBlinkColor[xx])); else colorPixelClearNoShow(xx);
+        }
+      }
+      //
+      rgbBlinkStatus = !rgbBlinkStatus;
+      if (hasOne) strip.show();
+    }
+  }
+}
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
 void updateButtonsOffColor()
@@ -70,6 +116,13 @@ void colorPixelClear(byte pixel)
   strip.setPixelColor(rgbLEDsList[pixel][0], strip.Color(0,   0,   0));
   strip.setPixelColor(rgbLEDsList[pixel][1], strip.Color(0,   0,   0));
   strip.show();
+}
+//
+// ------------------------------------------------------------------------------------------------------------------------------------
+void colorPixelClearNoShow(byte pixel)
+{
+  strip.setPixelColor(rgbLEDsList[pixel][0], strip.Color(0,   0,   0));
+  strip.setPixelColor(rgbLEDsList[pixel][1], strip.Color(0,   0,   0));
 }
 //
 // ------------------------------------------------------------------------------------------------------------------------------------

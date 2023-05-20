@@ -28,6 +28,8 @@ void setup()
   //
   memset(buttonsCounter, 0, sizeof(buttonsCounter));
   memset(customColors, 0, sizeof(customColors));
+  memset(rgbBlinkColor, 0, sizeof(rgbBlinkColor));
+  memset(specialFullColorMidiNote, 0, sizeof(specialFullColorMidiNote));
   //
   // Initialize RGB LEDs //
   //

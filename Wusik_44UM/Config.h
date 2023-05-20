@@ -16,6 +16,8 @@
 #define MAX_CUSTOM_COLORS 16
 #define HOLD_TOP_BUTTONS_SWAP_CONFIGURATION 1
 #define BUTTON_DEBOUCE_COUNTER 60
+#define RGB_BLINK_SLOW 1220
+#define RGB_BLINK_FAST 720
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
 enum

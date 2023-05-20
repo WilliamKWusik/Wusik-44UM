@@ -56,4 +56,6 @@ void loop()
   if (midiRX.header != 0) midiReceive();
   //
   buttonsDown = buttonsReleased = 0;
+  //
+  RGBBlink();
 }
