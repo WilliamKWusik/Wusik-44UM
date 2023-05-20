@@ -41,7 +41,6 @@ void setup()
   //
   clearPixels();
   readEEPROM();
-  MIDI.begin(1);
   //
   #if INTRO_ANIMATION
     pixelsIntroAnimation();

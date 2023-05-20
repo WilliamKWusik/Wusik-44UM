@@ -82,7 +82,7 @@
     }    
     //
     saveEEPROM();
-    delay(500);
+    delay(100);
     flashRed(6);
   }
 #endif

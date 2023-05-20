@@ -7,13 +7,15 @@ inline void checkButton(byte pin)
 {
   if (digitalRead(pin) == LOW)
   {
-    if (buttonsCounter[buttonsList[pin]] < 100) buttonsCounter[buttonsList[pin]]++;
-    if (buttonsCounter[buttonsList[pin]] == 10) setVarBit(buttonsDown, buttonsList[pin], true);
+    if (buttonsCounter[buttonsList[pin]] < 250) buttonsCounter[buttonsList[pin]]++;
+    if (buttonsCounter[buttonsList[pin]] == BUTTON_DEBOUCE_COUNTER) setVarBit(buttonsDown, buttonsList[pin], true);
+    if (buttonsCounter[buttonsList[pin]] >= BUTTON_DEBOUCE_COUNTER) setVarBit(buttonsHolding, buttonsList[pin], true);
   }
-  else if (buttonsCounter[buttonsList[pin]] > 0)
+  else if (buttonsCounter[buttonsList[pin]] >= BUTTON_DEBOUCE_COUNTER)
   {
-    buttonsCounter[buttonsList[pin]]--;
-    if (buttonsCounter[buttonsList[pin]] == 9) setVarBit(buttonsReleased, buttonsList[pin], true);
+    buttonsCounter[buttonsList[pin]] = 0;
+    setVarBit(buttonsReleased, buttonsList[pin], true);
+    setVarBit(buttonsHolding, buttonsList[pin], false);
   }
 }
 //
@@ -40,7 +42,15 @@ void loop()
   checkButton(21);
   //
   if (currentMode == 0) normalMode();
-  //if (flushMIDI) { MidiUSB.flush(); flushMIDI = false; }
+  #if HOLD_TOP_BUTTONS_SWAP_CONFIGURATION
+    else if (currentMode == 1) swapConfigurationMode();
+  #endif
+  //
+  if (flushMIDI) 
+  { 
+    MidiUSB.flush(); 
+    flushMIDI = false; 
+  }
   //
   buttonsDown = buttonsReleased = 0;
 }

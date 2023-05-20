@@ -1,18 +1,24 @@
 /*
  * Created by William Kalfelz @ Wusik.com (c) 2023
+ * 
+ * Important note: in order to disable the TX (Transmit) LED Blink on RGB LED #4 (in green) you need to edit the following arduino file:
+ * \Users\willi\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.5\variants\leonardo\pins_arduino.h
+ * And change the definitions below to "blank".
+ * 
+ * #define TX_RX_LED_INIT 
+ * #define TXLED0      
+ * #define TXLED1      
+ * 
  */
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
 #include <Adafruit_NeoPixel.h>
-//#include "MIDIUSB.h"
-#include <USB-MIDI.h>
+#include "MIDIUSB.h"
 #include <EEPROM.h>
 #include "Config.h"
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
 Adafruit_NeoPixel strip(RGBLEDS_COUNT, RGBLEDS_PIN, NEO_GRB + NEO_KHZ800);
-USBMIDI_CREATE_DEFAULT_INSTANCE();
-using namespace MIDI_NAMESPACE;
 //
 #if INTRO_ANIMATION
   byte rgbsIntroAnimation[16] = { 0, 1, 2, 3, 7, 11, 15, 14, 13, 12, 8, 4, 5, 6, 10, 9 };
@@ -29,7 +35,8 @@ struct ButtonsStruct
   byte channel = 0; // MIDI Channel //
 };
 //
-midiEventPacket_t midiEvent;
+byte bothTopButtonsHold = 0;
+uint8_t data[4];
 bool flushMIDI = false;
 byte eepromVersion = 1;
 byte currentMode = 0;
@@ -37,6 +44,7 @@ byte currentPage = 0;
 byte buttonsCounter[18];
 __uint24 buttonsDown = 0;
 __uint24 buttonsReleased = 0;
+__uint24 buttonsHolding = 0;
 byte customColors[MAX_CUSTOM_COLORS][3];
 ButtonsStruct buttonsStruct[MAX_PAGES][18];
 byte buttonsList[MAX_BUTTON_PIN + 1];

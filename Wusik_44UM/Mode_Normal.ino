@@ -19,6 +19,19 @@ void normalMode_ButtonDown(byte button)
   switch(buttonsStruct[currentPage][button].type)
   {
     case kNoteOnOff: midiSendNote(button, true); break;
+    case kMIDI_CC: midiSendCC(button, 127); break;
+    case kMIDI_CC_Flip: 
+      if (buttonsStruct[currentPage][button].valueChar > 0) 
+      {
+        midiSendCC(button, 10);
+        buttonsStruct[currentPage][button].valueChar = -1;
+      }
+      else
+      {
+        midiSendCC(button, 120);
+        buttonsStruct[currentPage][button].valueChar = 1;
+      }
+      break;
   }
 }
 //
@@ -62,7 +75,7 @@ void normalMode()
   {
     for (byte bb = 0; bb < 18; bb++)
     {
-      if (getVarBit(buttonsDown, bb)) 
+      if (getVarBit(buttonsDown, bb))
       {
         normalMode_ButtonDown(bb);
       }
@@ -78,5 +91,29 @@ void normalMode()
         normalMode_ButtonRelease(bb);
       }
     }
+  }
+  //
+  if (buttonsHolding > 0)
+  {
+    #if HOLD_TOP_BUTTONS_SWAP_CONFIGURATION
+      if (getVarBit(buttonsHolding, 0) && getVarBit(buttonsHolding, 1))
+      {
+        if (bothTopButtonsHold < 250)
+        {
+          bothTopButtonsHold++;
+          if (bothTopButtonsHold > 10) delay(20);
+          //
+          if (bothTopButtonsHold == 250)
+          {
+            flashRed(6);
+            colorPixelWhite(0);
+            colorPixelWhite(1);
+            colorPixelWhite(2);
+            currentMode = 1;
+          }
+        }
+      }
+      else if (bothTopButtonsHold > 0) bothTopButtonsHold--;  
+    #endif
   }
 }
