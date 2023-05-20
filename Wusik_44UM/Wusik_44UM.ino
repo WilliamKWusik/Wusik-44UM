@@ -1,13 +1,15 @@
 /*
  * Created by William Kalfelz @ Wusik.com (c) 2023
  * 
+ * Version 1.0.0 (BETA) 05/20/2023
+ * 
  * Important note: in order to disable the TX (Transmit) LED Blink on RGB LED #4 (in green) you need to edit the following arduino file:
  * \Users\willi\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.5\variants\leonardo\pins_arduino.h
- * And change the definitions below to "blank".
- * 
- * #define TX_RX_LED_INIT 
- * #define TXLED0      
- * #define TXLED1      
+ * And change the definitions below to "blank". Restart the Arduino IDE once you have done that.
+ * #define TX_RX_LED_INIT ***REMOVE***
+ * #define TXLED0 ***REMOVE***
+ * #define TXLED1 ***REMOVE***
+ * Otherwise, every time you send any MIDI data the top-right led will go green as that's the TX send.
  * 
  */
 //
@@ -35,7 +37,9 @@ struct ButtonsStruct
   byte channel = 0; // MIDI Channel //
 };
 //
+midiEventPacket_t midiRX;
 byte bothTopButtonsHold = 0;
+bool turnOffButtonLEDs = false; // Can be used to handle all leds via MIDI instead //
 uint8_t data[4];
 bool flushMIDI = false;
 byte eepromVersion = 1;

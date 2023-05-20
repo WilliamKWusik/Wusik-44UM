@@ -5,7 +5,7 @@
 // ------------------------------------------------------------------------------------------------------------------------------------
 void normalMode_ButtonDown(byte button)
 {
-  if (button >= 2)
+  if (button >= 2 && !turnOffButtonLEDs)
   {
     strip.setPixelColor(rgbLEDsList[button - 2][0], getColor(buttonsStruct[currentPage][button].colorOn));
     strip.setPixelColor(rgbLEDsList[button - 2][1], getColor(buttonsStruct[currentPage][button].colorOn));   
@@ -36,7 +36,7 @@ void normalMode_ButtonDown(byte button)
 // ------------------------------------------------------------------------------------------------------------------------------------
 void normalMode_ButtonRelease(byte button)
 {
-  if (button >= 2)
+  if (button >= 2 && !turnOffButtonLEDs)
   {
     strip.setPixelColor(rgbLEDsList[button - 2][0], getColor(buttonsStruct[currentPage][button].colorOff));
     strip.setPixelColor(rgbLEDsList[button - 2][1], getColor(buttonsStruct[currentPage][button].colorOff)); 

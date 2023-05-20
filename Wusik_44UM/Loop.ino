@@ -51,6 +51,9 @@ void loop()
     MidiUSB.flush(); 
     flushMIDI = false; 
   }
+  //  
+  midiRX = MidiUSB.read();
+  if (midiRX.header != 0) midiReceive();
   //
   buttonsDown = buttonsReleased = 0;
 }
