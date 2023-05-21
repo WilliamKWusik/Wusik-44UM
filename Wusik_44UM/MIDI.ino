@@ -5,7 +5,11 @@
 // ------------------------------------------------------------------------------------------------------------------------------------
 void midiReceive()
 {
-  if (midiRX.header == 0x9) // Note On //
+  if (midiRX.header == 0x4) // System Exclusive Data (SysEx) //
+  {
+    recieveSysEx(midiRX.byte2, midiRX.byte3);
+  }
+  else if (midiRX.header == 0x9) // Note On //
   {
     if (midiRX.byte1 == 0x90) // Channel 1 //
     {
