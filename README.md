@@ -11,6 +11,7 @@ Featuring:
 - 3D Printed Case and Buttons. Unit size: 15 x 15 x 20 cm (rubber feet excluded);
 - Windows, MAC and Linux USB MIDI HID Device Compatible (no drivers needed);
 - Windows and MAC App for customizing buttons and leds. Using this app you can configure everything and save into the unit's EEPROM memory;
-- Multiple options for setting the device to directly from the device: MIDICC, Note On/Off, Note On/Off Latch. Just press and hold both top buttons for a few seconds to enter the configuration swap option.
+- Multiple options for setting the device directly: MIDICC, Note On/Off, Note On/Off Latch. Just press and hold both top buttons for a few seconds to enter the configuration swap option;
+- The unit also receives MIDI which can be used to set the RGB LEDs using note on/off. This is great for when you want to change LEDs with a sequencer or create your own App to handle LEDs. One particular note will turn on and off the unit hanlding of LEDs and will only react to input notes to set leds.
 
 Support this project by ordering a full unit from the Wusik.com site.
