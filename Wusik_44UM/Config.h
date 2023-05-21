@@ -23,6 +23,6 @@
 enum
 {
   kOff = 0, kWhite, kRed, kGreen, kBlue, kRed_Soft, kGreen_Soft, kBlue_Soft, kCustom1,
-  kNothing = 0, kNoteOnOff, kMIDI_CC, kActionOnRelease, kMIDI_CC_Value_Up, kMIDI_CC_Value_Down, kMIDI_CC_Flip, kActionOnHold,
+  kNothing = 0, kNoteOnOff, kNoteOnOffLatch, kMIDI_CC, kActionOnRelease, kMIDI_CC_Flip, kActionOnHold,
   kNextPage = 0, kPreviousPage, kPanic, kGoToPage
 };

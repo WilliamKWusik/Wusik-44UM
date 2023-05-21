@@ -108,13 +108,13 @@ void midiReceive()
 }
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
-void midiSendNote(byte button, bool isNoteOn)
+void midiSendNote(byte value1, byte value2, bool isNoteOn)
 {
   if (!isNoteOn)
   {
     data[0] = 0x8;
     data[1] = 0x80;
-    data[2] = buttonsStruct[currentPage][button].value1;
+    data[2] = value1;
     data[3] = 0;
     MidiUSB.write(data, 4);
   }
@@ -122,8 +122,8 @@ void midiSendNote(byte button, bool isNoteOn)
   {
     data[0] = 0x9;
     data[1] = 0x90;
-    data[2] = buttonsStruct[currentPage][button].value1;
-    data[3] = buttonsStruct[currentPage][button].value2;
+    data[2] = value1;
+    data[3] = value2;
     MidiUSB.write(data, 4);
   }
   //

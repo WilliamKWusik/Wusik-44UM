@@ -57,8 +57,24 @@ void updateButtonsOffColor()
   //
   for (byte xx = 0; xx < 16; xx++)
   {
-    strip.setPixelColor(rgbLEDsList[xx][0], getColor(buttonsStruct[currentPage][xx + 2].colorOff));
-    strip.setPixelColor(rgbLEDsList[xx][1], getColor(buttonsStruct[currentPage][xx + 2].colorOff));
+    if (buttonsStruct[currentPage][xx + 2].type == kNoteOnOffLatch)
+    {
+      if (buttonsStruct[currentPage][xx + 2].valueChar == 1)
+      {
+        strip.setPixelColor(rgbLEDsList[xx][0], getColor(buttonsStruct[currentPage][xx + 2].colorOn));
+        strip.setPixelColor(rgbLEDsList[xx][1], getColor(buttonsStruct[currentPage][xx + 2].colorOn));       
+      }
+      else
+      {
+        strip.setPixelColor(rgbLEDsList[xx][0], getColor(buttonsStruct[currentPage][xx + 2].colorOff));
+        strip.setPixelColor(rgbLEDsList[xx][1], getColor(buttonsStruct[currentPage][xx + 2].colorOff));        
+      }
+    }
+    else
+    {
+      strip.setPixelColor(rgbLEDsList[xx][0], getColor(buttonsStruct[currentPage][xx + 2].colorOff));
+      strip.setPixelColor(rgbLEDsList[xx][1], getColor(buttonsStruct[currentPage][xx + 2].colorOff));
+    }
   }
   //
   strip.show();

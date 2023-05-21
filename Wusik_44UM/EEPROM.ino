@@ -33,7 +33,17 @@ void saveEEPROM()
       EEPROM.update(address++, buttonsStruct[xx][yy].valueChar);
       EEPROM.update(address++, buttonsStruct[xx][yy].channel);
     }
-  } 
+  }
+  //
+  EEPROM.update(address++, buttonsHoldTop.type);
+  EEPROM.update(address++, buttonsHoldTop.colorOn);
+  EEPROM.update(address++, buttonsHoldTop.colorOff);
+  EEPROM.update(address++, buttonsHoldTop.value1);
+  EEPROM.update(address++, buttonsHoldTop.value2);
+  EEPROM.update(address++, buttonsHoldTop.valueChar);
+  EEPROM.update(address++, buttonsHoldTop.channel);
+  //
+  if (address >= 1024) flashRed(200);
 }
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
@@ -68,4 +78,12 @@ void readEEPROM()
       buttonsStruct[xx][yy].channel = EEPROM.read(address++);
     }
   }
+  //
+  buttonsHoldTop.type = EEPROM.read(address++);
+  buttonsHoldTop.colorOn = EEPROM.read(address++);
+  buttonsHoldTop.colorOff = EEPROM.read(address++);
+  buttonsHoldTop.value1 = EEPROM.read(address++);
+  buttonsHoldTop.value2 = EEPROM.read(address++);
+  buttonsHoldTop.valueChar = EEPROM.read(address++);
+  buttonsHoldTop.channel = EEPROM.read(address++);
 }

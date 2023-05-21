@@ -12,8 +12,11 @@
       {
         if (getVarBit(buttonsDown, bb))
         {     
-          if (bb == 2 || bb == 3 || bb == 4 || bb == 5)
+          if (bb == 2 || bb == 3 || bb == 4 || bb == 5 || bb == 6)
           {
+            buttonsHoldTop.type = kActionOnRelease;
+            buttonsHoldTop.value1 = kPanic;
+            //
             for (byte xx = 0; xx < MAX_PAGES; xx++)
             {
               if (bb == 5)
@@ -42,6 +45,12 @@
                 if (bb == 2)
                 {
                   buttonsStruct[xx][yy + 2].type = kNoteOnOff;
+                  buttonsStruct[xx][yy + 2].value1 = 36 + (xx * 12) + yy;
+                  buttonsStruct[xx][yy + 2].value2 = 127;
+                }
+                else if (bb == 6)
+                {
+                  buttonsStruct[xx][yy + 2].type = kNoteOnOffLatch;
                   buttonsStruct[xx][yy + 2].value1 = 36 + (xx * 12) + yy;
                   buttonsStruct[xx][yy + 2].value2 = 127;
                 }
