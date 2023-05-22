@@ -87,14 +87,14 @@ uint32_t getColor(byte colorID)
   //
   switch(colorID)
   {
-    case kOff:        returnColor = strip.Color(  0,     0,     0); break;
-    case kWhite:      returnColor = strip.Color(255,   255,   255); break;
-    case kRed:        returnColor = strip.Color(255,     0,     0); break;
-    case kGreen:      returnColor = strip.Color(  0,   255,     0); break;
-    case kBlue:       returnColor = strip.Color(  0,     0,   255); break;
-    case kRed_Soft:   returnColor = strip.Color( 25,     0,     0); break;
-    case kGreen_Soft: returnColor = strip.Color(  0,    25,     0); break;
-    case kBlue_Soft:  returnColor = strip.Color(  0,     0,    25); break;
+    case kOff:        returnColor = strip.Color(  0,   0,   0); break;
+    case kWhite:      returnColor = strip.Color(255, 255, 255); break;
+    case kRed:        returnColor = strip.Color(255,   0,   0); break;
+    case kGreen:      returnColor = strip.Color(  0, 255,   0); break;
+    case kBlue:       returnColor = strip.Color(  0,   0, 255); break;
+    case kRed_Soft:   returnColor = strip.Color( 25,   0,   0); break;
+    case kGreen_Soft: returnColor = strip.Color(  0,  25,   0); break;
+    case kBlue_Soft:  returnColor = strip.Color(  0,   0,  25); break;
   }
   //
   return returnColor;

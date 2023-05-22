@@ -50,7 +50,7 @@ void setup()
   //
   // Reset ValueChar to 0 As Its Used By Things Like NoteOnOff Latch and MIDICC Flip //
   //
-  for (byte xx = 0; xx < 16; xx++)
+  for (byte xx = 0; xx < 18; xx++)
   {
     for (byte yy = 0; yy < MAX_PAGES; yy++)
     {
