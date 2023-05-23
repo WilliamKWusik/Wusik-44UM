@@ -37,6 +37,7 @@ Adafruit_NeoPixel strip(RGBLEDS_COUNT, RGBLEDS_PIN, NEO_GRB + NEO_KHZ800);
 #endif
 //
 midiEventPacket_t midiRX;
+byte machineID = 0;
 byte bothTopButtonsHold = 0;
 bool turnOffButtonLEDs = false; // Can be used to handle all leds via MIDI instead //
 uint8_t data[4];

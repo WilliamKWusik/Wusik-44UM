@@ -8,6 +8,7 @@
   {
     // Setup buttons by pressing them in order //
     //
+    machineID = 0;
     flashRed(2);
     //
     for (byte xx = 0; xx < 18; xx++)

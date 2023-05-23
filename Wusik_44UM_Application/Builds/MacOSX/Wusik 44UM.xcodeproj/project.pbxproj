@@ -44,6 +44,7 @@
 		89642A4D018A91ADF8BCD718 /* include_juce_audio_processors_lv2_libs.cpp */ = {isa = PBXBuildFile; fileRef = 050DB642E8F9A50BF0640B06; };
 		8BFAD84444350DCCE07A577A /* DiscRecording.framework */ = {isa = PBXBuildFile; fileRef = 50016D3230E1BB64215E73AE; };
 		8EE096AF380EA1186C7B36AF /* include_juce_audio_plugin_client_Standalone.cpp */ = {isa = PBXBuildFile; fileRef = D1298930B5394568F54FE178; };
+		9BC4B6391AC05B4AFDB5F19B /* NewComponent.cpp */ = {isa = PBXBuildFile; fileRef = 33F127F683A2423D56F67B32; };
 		A049FCE79AE824F3B2E2D73C /* include_juce_data_structures.mm */ = {isa = PBXBuildFile; fileRef = 3E0289FC6092F64E51AE831B; };
 		A1EF2DBA09E1F28A9281AA95 /* include_juce_audio_processors_ara.cpp */ = {isa = PBXBuildFile; fileRef = 538513088BD3BC332F96CCAC; };
 		AF39DF0A3EB4689341C79DDC /* QuartzCore.framework */ = {isa = PBXBuildFile; fileRef = 9C2B1345BE71A75C6A305F23; };
@@ -67,6 +68,7 @@
 		29F509B3F86CC57B96A1232E /* include_juce_audio_processors.mm */ /* include_juce_audio_processors.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_processors.mm; path = ../../JuceLibraryCode/include_juce_audio_processors.mm; sourceTree = SOURCE_ROOT; };
 		3198660E79B535F875C9BF32 /* RecentFilesMenuTemplate.nib */ /* RecentFilesMenuTemplate.nib */ = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = SOURCE_ROOT; };
 		32EFF2887C7D8B232DFE0ADE /* CoreAudio.framework */ /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		33F127F683A2423D56F67B32 /* NewComponent.cpp */ /* NewComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = NewComponent.cpp; path = ../../Source/NewComponent.cpp; sourceTree = SOURCE_ROOT; };
 		357D51769F9FC09C006E4963 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = "/Users/williamk/Documents/JUCE 5/modules/juce_graphics"; sourceTree = "<absolute>"; };
 		39CDAF6DF1AA812F2685E470 /* Shared Code */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libWusik 44UM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0F81445366217B12D98E07 /* juce_data_structures */ /* juce_data_structures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_data_structures; path = "/Users/williamk/Documents/JUCE 5/modules/juce_data_structures"; sourceTree = "<absolute>"; };
@@ -79,6 +81,7 @@
 		538513088BD3BC332F96CCAC /* include_juce_audio_processors_ara.cpp */ /* include_juce_audio_processors_ara.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_processors_ara.cpp; path = ../../JuceLibraryCode/include_juce_audio_processors_ara.cpp; sourceTree = SOURCE_ROOT; };
 		57A3BEEC2331B7B72C39B4DA /* include_juce_events.mm */ /* include_juce_events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_events.mm; path = ../../JuceLibraryCode/include_juce_events.mm; sourceTree = SOURCE_ROOT; };
 		5CD869A843A6EE9CFD955407 /* juce_audio_devices */ /* juce_audio_devices */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_devices; path = "/Users/williamk/Documents/JUCE 5/modules/juce_audio_devices"; sourceTree = "<absolute>"; };
+		61715A7F0AB34F99AE69BF70 /* NewComponent.h */ /* NewComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NewComponent.h; path = ../../Source/NewComponent.h; sourceTree = SOURCE_ROOT; };
 		66A23FEF82915A1C87FDC8B8 /* Cocoa.framework */ /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		76ED720C5692AB3A5AB1A29F /* Standalone Plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wusik 44UM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E4F00BB05F5148D98EAD1C /* include_juce_audio_plugin_client_ARA.cpp */ /* include_juce_audio_plugin_client_ARA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_ARA.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_ARA.cpp; sourceTree = SOURCE_ROOT; };
@@ -209,6 +212,8 @@
 		641F375527B6813DB4D198F1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				33F127F683A2423D56F67B32,
+				61715A7F0AB34F99AE69BF70,
 				C25A9D009C3DE902D90D40F5,
 				9916039BAB289AC3A0E55B3A,
 				DC28593FAEFEE263563E19DA,
@@ -402,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BC4B6391AC05B4AFDB5F19B,
 				11000588D1EEA3FAAA7E03E0,
 				60DE5F8DEB9B1916FF55B458,
 				848C19EAD62A6D36AC3550CF,

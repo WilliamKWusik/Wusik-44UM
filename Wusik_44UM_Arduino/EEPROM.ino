@@ -6,6 +6,7 @@
 void saveEEPROM()
 {
   int address = 0;
+  EEPROM.update(address++, machineID);
   EEPROM.update(address++, CURRENT_DATA_VERSION);
   //
   for (byte xx = 0; xx < (MAX_BUTTON_PIN + 1); xx++)
@@ -50,6 +51,7 @@ void saveEEPROM()
 void readEEPROM()
 {
   int address = 0;
+  machineID = EEPROM.read(address++);
   byte version = EEPROM.read(address++);
   //
   for (byte xx = 0; xx < (MAX_BUTTON_PIN + 1); xx++)

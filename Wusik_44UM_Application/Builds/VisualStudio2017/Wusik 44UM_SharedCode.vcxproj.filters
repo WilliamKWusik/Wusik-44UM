@@ -577,6 +577,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\NewComponent.cpp">
+      <Filter>Wusik 44UM\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\PluginProcessor.cpp">
       <Filter>Wusik 44UM\Source</Filter>
     </ClCompile>
@@ -2889,6 +2892,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\NewComponent.h">
+      <Filter>Wusik 44UM\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\PluginProcessor.h">
       <Filter>Wusik 44UM\Source</Filter>
     </ClInclude>

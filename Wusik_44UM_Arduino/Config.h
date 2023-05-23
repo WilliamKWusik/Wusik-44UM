@@ -18,6 +18,7 @@
 #define BUTTON_DEBOUCE_COUNTER 60
 #define RGB_BLINK_SLOW 1220
 #define RGB_BLINK_FAST 720
+#define MAX_SYSEX_BUFFER 24
 //
 // ------------------------------------------------------------------------------------------------------------------------------------
 enum

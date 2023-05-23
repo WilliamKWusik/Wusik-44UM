@@ -7,6 +7,9 @@
               pluginManufacturerCode="Wusk" pluginCode="W44M" pluginChannelConfigs="{0,0}">
   <MAINGROUP id="K19D3w" name="Wusik 44UM">
     <GROUP id="{9D2D83AA-23A3-716F-0E6B-3935DDF82FDA}" name="Source">
+      <FILE id="TP3EK7" name="NewComponent.cpp" compile="1" resource="0"
+            file="Source/NewComponent.cpp"/>
+      <FILE id="eC1j8q" name="NewComponent.h" compile="0" resource="0" file="Source/NewComponent.h"/>
       <FILE id="HObfto" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="RzGQfB" name="PluginProcessor.h" compile="0" resource="0"
@@ -21,7 +24,7 @@
     <VS2017 targetFolder="Builds/VisualStudio2017">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="NewProject"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="NewProject"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="NewProject" linkTimeOptimisation="0"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path="../../../../JUCE 7/modules"/>
