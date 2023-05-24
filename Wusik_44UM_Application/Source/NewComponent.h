@@ -80,6 +80,9 @@ private:
     std::unique_ptr<juce::TextButton> button_16;
     std::unique_ptr<juce::TextButton> button_17;
     std::unique_ptr<juce::TextButton> button_18;
+    std::unique_ptr<juce::TextButton> textButton_File;
+    std::unique_ptr<juce::TextButton> textButton_BPM;
+    std::unique_ptr<juce::TextButton> textButton_Stop;
     juce::Image cachedImage_logo_w100_100_png_1;
 
 

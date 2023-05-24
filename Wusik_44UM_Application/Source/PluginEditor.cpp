@@ -18,9 +18,9 @@ NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioP
 
 	theComponent = new NewComponent();
 	addAndMakeVisible(theComponent);
-	theComponent->setBounds(0, 0, 680, 776);
+	theComponent->setBounds(0, 0, 1040, 688);
 
-    setSize (680, 776);
+    setSize (1040, 688);
 }
 
 NewProjectAudioProcessorEditor::~NewProjectAudioProcessorEditor()

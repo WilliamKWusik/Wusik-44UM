@@ -47,7 +47,7 @@ NewComponent::NewComponent ()
     comboBox_Page->addItem (TRANS("Page 7"), 7);
     comboBox_Page->addListener (this);
 
-    comboBox_Page->setBounds (536, 64, 110, 40);
+    comboBox_Page->setBounds (560, 16, 88, 32);
 
     button_1.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_1.get());
@@ -55,7 +55,7 @@ NewComponent::NewComponent ()
     button_1->addListener (this);
     button_1->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_1->setBounds (56, 145, 96, 40);
+    button_1->setBounds (48, 72, 128, 40);
 
     button_2.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_2.get());
@@ -63,7 +63,7 @@ NewComponent::NewComponent ()
     button_2->addListener (this);
     button_2->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_2->setBounds (200, 145, 96, 40);
+    button_2->setBounds (200, 73, 128, 40);
 
     button_3.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_3.get());
@@ -71,7 +71,7 @@ NewComponent::NewComponent ()
     button_3->addListener (this);
     button_3->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_3->setBounds (48, 205, 128, 112);
+    button_3->setBounds (48, 133, 128, 112);
 
     button_4.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_4.get());
@@ -79,7 +79,7 @@ NewComponent::NewComponent ()
     button_4->addListener (this);
     button_4->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_4->setBounds (200, 205, 128, 112);
+    button_4->setBounds (200, 133, 128, 112);
 
     button_5.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_5.get());
@@ -87,7 +87,7 @@ NewComponent::NewComponent ()
     button_5->addListener (this);
     button_5->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_5->setBounds (352, 205, 128, 112);
+    button_5->setBounds (352, 133, 128, 112);
 
     button_6.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_6.get());
@@ -95,7 +95,7 @@ NewComponent::NewComponent ()
     button_6->addListener (this);
     button_6->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_6->setBounds (504, 205, 128, 112);
+    button_6->setBounds (504, 133, 128, 112);
 
     button_7.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_7.get());
@@ -103,7 +103,7 @@ NewComponent::NewComponent ()
     button_7->addListener (this);
     button_7->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_7->setBounds (51, 345, 128, 112);
+    button_7->setBounds (51, 273, 128, 112);
 
     button_8.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_8.get());
@@ -111,7 +111,7 @@ NewComponent::NewComponent ()
     button_8->addListener (this);
     button_8->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_8->setBounds (203, 345, 128, 112);
+    button_8->setBounds (203, 273, 128, 112);
 
     button_9.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_9.get());
@@ -119,7 +119,7 @@ NewComponent::NewComponent ()
     button_9->addListener (this);
     button_9->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_9->setBounds (355, 345, 128, 112);
+    button_9->setBounds (355, 273, 128, 112);
 
     button_10.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_10.get());
@@ -127,7 +127,7 @@ NewComponent::NewComponent ()
     button_10->addListener (this);
     button_10->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_10->setBounds (507, 345, 128, 112);
+    button_10->setBounds (507, 273, 128, 112);
 
     button_11.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_11.get());
@@ -135,7 +135,7 @@ NewComponent::NewComponent ()
     button_11->addListener (this);
     button_11->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_11->setBounds (50, 478, 128, 112);
+    button_11->setBounds (50, 406, 128, 112);
 
     button_12.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_12.get());
@@ -143,7 +143,7 @@ NewComponent::NewComponent ()
     button_12->addListener (this);
     button_12->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_12->setBounds (202, 478, 128, 112);
+    button_12->setBounds (202, 406, 128, 112);
 
     button_13.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_13.get());
@@ -151,7 +151,7 @@ NewComponent::NewComponent ()
     button_13->addListener (this);
     button_13->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_13->setBounds (354, 478, 128, 112);
+    button_13->setBounds (354, 406, 128, 112);
 
     button_14.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_14.get());
@@ -159,7 +159,7 @@ NewComponent::NewComponent ()
     button_14->addListener (this);
     button_14->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_14->setBounds (506, 478, 128, 112);
+    button_14->setBounds (506, 406, 128, 112);
 
     button_15.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_15.get());
@@ -167,7 +167,7 @@ NewComponent::NewComponent ()
     button_15->addListener (this);
     button_15->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_15->setBounds (53, 618, 128, 112);
+    button_15->setBounds (53, 546, 128, 112);
 
     button_16.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_16.get());
@@ -175,7 +175,7 @@ NewComponent::NewComponent ()
     button_16->addListener (this);
     button_16->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_16->setBounds (205, 618, 128, 112);
+    button_16->setBounds (205, 546, 128, 112);
 
     button_17.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_17.get());
@@ -183,7 +183,7 @@ NewComponent::NewComponent ()
     button_17->addListener (this);
     button_17->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_17->setBounds (357, 618, 128, 112);
+    button_17->setBounds (357, 546, 128, 112);
 
     button_18.reset (new juce::TextButton ("new button"));
     addAndMakeVisible (button_18.get());
@@ -191,7 +191,31 @@ NewComponent::NewComponent ()
     button_18->addListener (this);
     button_18->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c6ba4));
 
-    button_18->setBounds (509, 618, 128, 112);
+    button_18->setBounds (509, 546, 128, 112);
+
+    textButton_File.reset (new juce::TextButton ("new button"));
+    addAndMakeVisible (textButton_File.get());
+    textButton_File->setButtonText (TRANS("File"));
+    textButton_File->addListener (this);
+    textButton_File->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c68a4));
+
+    textButton_File->setBounds (335, 16, 88, 32);
+
+    textButton_BPM.reset (new juce::TextButton ("new button"));
+    addAndMakeVisible (textButton_BPM.get());
+    textButton_BPM->setButtonText (TRANS("120"));
+    textButton_BPM->addListener (this);
+    textButton_BPM->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c68a4));
+
+    textButton_BPM->setBounds (439, 16, 64, 32);
+
+    textButton_Stop.reset (new juce::TextButton ("new button"));
+    addAndMakeVisible (textButton_Stop.get());
+    textButton_Stop->setButtonText (juce::String());
+    textButton_Stop->addListener (this);
+    textButton_Stop->setColour (juce::TextButton::buttonColourId, juce::Colour (0xc1ff0a0a));
+
+    textButton_Stop->setBounds (522, 22, 22, 22);
 
     cachedImage_logo_w100_100_png_1 = juce::ImageCache::getFromMemory (logo_w100_100_png, logo_w100_100_pngSize);
 
@@ -229,6 +253,9 @@ NewComponent::~NewComponent()
     button_16 = nullptr;
     button_17 = nullptr;
     button_18 = nullptr;
+    textButton_File = nullptr;
+    textButton_BPM = nullptr;
+    textButton_Stop = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -244,7 +271,7 @@ void NewComponent::paint (juce::Graphics& g)
     g.fillAll (juce::Colour (0xff03141c));
 
     {
-        int x = 36, y = 12, width = 100, height = 100;
+        int x = 44, y = 4, width = 60, height = 56;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (juce::Colours::black);
@@ -254,7 +281,7 @@ void NewComponent::paint (juce::Graphics& g)
     }
 
     {
-        float x = 28.0f, y = 124.0f, width = 628.0f, height = 628.0f;
+        float x = 28.0f, y = 60.0f, width = 628.0f, height = 612.0f;
         juce::Colour fillColour = juce::Colour (0xff474747);
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
@@ -263,20 +290,30 @@ void NewComponent::paint (juce::Graphics& g)
     }
 
     {
-        int x = 124, y = 60, width = 100, height = 30;
+        int x = 84, y = 28, width = 84, height = 26;
         juce::String text (TRANS("44UM"));
         juce::Colour fillColour = juce::Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (juce::Font (34.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (juce::Font (20.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
                     juce::Justification::centred, true);
     }
 
     {
-        int x = 0, y = 0, width = 680, height = 776;
-        juce::Colour strokeColour = juce::Colour (0xff2a91a5);
+        int x = 0, y = 0, width = 1040, height = 688;
+        juce::Colour strokeColour = juce::Colour (0x80808080);
+        //[UserPaintCustomArguments] Customize the painting arguments here..
+        //[/UserPaintCustomArguments]
+        g.setColour (strokeColour);
+        g.drawRect (x, y, width, height, 5);
+
+    }
+
+    {
+        int x = 672, y = 0, width = 6, height = 688;
+        juce::Colour strokeColour = juce::Colour (0x40808080);
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (strokeColour);
@@ -407,6 +444,21 @@ void NewComponent::buttonClicked (juce::Button* buttonThatWasClicked)
         //[UserButtonCode_button_18] -- add your button handler code here..
         //[/UserButtonCode_button_18]
     }
+    else if (buttonThatWasClicked == textButton_File.get())
+    {
+        //[UserButtonCode_textButton_File] -- add your button handler code here..
+        //[/UserButtonCode_textButton_File]
+    }
+    else if (buttonThatWasClicked == textButton_BPM.get())
+    {
+        //[UserButtonCode_textButton_BPM] -- add your button handler code here..
+        //[/UserButtonCode_textButton_BPM]
+    }
+    else if (buttonThatWasClicked == textButton_Stop.get())
+    {
+        //[UserButtonCode_textButton_Stop] -- add your button handler code here..
+        //[/UserButtonCode_textButton_Stop]
+    }
 
     //[UserbuttonClicked_Post]
     //[/UserbuttonClicked_Post]
@@ -432,73 +484,83 @@ BEGIN_JUCER_METADATA
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
                  fixedSize="0" initialWidth="420" initialHeight="480">
   <BACKGROUND backgroundColour="ff03141c">
-    <IMAGE pos="36 12 100 100" resource="logo_w100_100_png" opacity="1.0"
-           mode="0"/>
-    <ROUNDRECT pos="28 124 628 628" cornerSize="10.0" fill="solid: ff474747"
+    <IMAGE pos="44 4 60 56" resource="logo_w100_100_png" opacity="1.0" mode="0"/>
+    <ROUNDRECT pos="28 60 628 612" cornerSize="10.0" fill="solid: ff474747"
                hasStroke="0"/>
-    <TEXT pos="124 60 100 30" fill="solid: ffffffff" hasStroke="0" text="44UM"
-          fontname="Default font" fontsize="34.0" kerning="0.0" bold="0"
+    <TEXT pos="84 28 84 26" fill="solid: ffffffff" hasStroke="0" text="44UM"
+          fontname="Default font" fontsize="20.0" kerning="0.0" bold="0"
           italic="0" justification="36"/>
-    <RECT pos="0 0 680 776" fill="solid: ff7600" hasStroke="1" stroke="5, mitered, butt"
-          strokeColour="solid: ff2a91a5"/>
+    <RECT pos="0 0 1040 688" fill="solid: ff7600" hasStroke="1" stroke="5, mitered, butt"
+          strokeColour="solid: 80808080"/>
+    <RECT pos="672 0 6 688" fill="solid: ff7600" hasStroke="1" stroke="5, mitered, butt"
+          strokeColour="solid: 40808080"/>
   </BACKGROUND>
   <COMBOBOX name="comboBox_Page" id="c3e6fcc7b3820d63" memberName="comboBox_Page"
-            virtualName="" explicitFocusOrder="0" pos="536 64 110 40" editable="0"
+            virtualName="" explicitFocusOrder="0" pos="560 16 88 32" editable="0"
             layout="33" items="Page 1&#10;Page 2&#10;Page 3&#10;Page 4&#10;Page 5&#10;Page 6&#10;Page 7"
             textWhenNonSelected="Page 1" textWhenNoItems="(no choices)"/>
   <TEXTBUTTON name="new button" id="66db27d7aa3c261d" memberName="button_1"
-              virtualName="" explicitFocusOrder="0" pos="56 145 96 40" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="48 72 128 40" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="cb73378c7e55abda" memberName="button_2"
-              virtualName="" explicitFocusOrder="0" pos="200 145 96 40" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="200 73 128 40" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="69f993b30f946708" memberName="button_3"
-              virtualName="" explicitFocusOrder="0" pos="48 205 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="48 133 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="67c7ed4f87f3f06d" memberName="button_4"
-              virtualName="" explicitFocusOrder="0" pos="200 205 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="200 133 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="bd1f710ecef3bf60" memberName="button_5"
-              virtualName="" explicitFocusOrder="0" pos="352 205 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="352 133 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="b0eba400c86298d9" memberName="button_6"
-              virtualName="" explicitFocusOrder="0" pos="504 205 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="504 133 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="ba25e33593994046" memberName="button_7"
-              virtualName="" explicitFocusOrder="0" pos="51 345 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="51 273 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="d2c0c5b1aa83f72e" memberName="button_8"
-              virtualName="" explicitFocusOrder="0" pos="203 345 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="203 273 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="8ffeb9a3766ee19f" memberName="button_9"
-              virtualName="" explicitFocusOrder="0" pos="355 345 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="355 273 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="e2ee5317161833bf" memberName="button_10"
-              virtualName="" explicitFocusOrder="0" pos="507 345 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="507 273 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="1132bfc1395f40b3" memberName="button_11"
-              virtualName="" explicitFocusOrder="0" pos="50 478 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="50 406 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="530a7ca25c3e39d5" memberName="button_12"
-              virtualName="" explicitFocusOrder="0" pos="202 478 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="202 406 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="fe0bd0478c22165b" memberName="button_13"
-              virtualName="" explicitFocusOrder="0" pos="354 478 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="354 406 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="6a2eb12280b97f83" memberName="button_14"
-              virtualName="" explicitFocusOrder="0" pos="506 478 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="506 406 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="1dc4ac3d7b9673f0" memberName="button_15"
-              virtualName="" explicitFocusOrder="0" pos="53 618 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="53 546 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="d1e15447452281a5" memberName="button_16"
-              virtualName="" explicitFocusOrder="0" pos="205 618 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="205 546 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="3222a9b98d7a1ec7" memberName="button_17"
-              virtualName="" explicitFocusOrder="0" pos="357 618 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="357 546 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="edf101a2a227f9cc" memberName="button_18"
-              virtualName="" explicitFocusOrder="0" pos="509 618 128 112" bgColOff="ff5c6ba4"
+              virtualName="" explicitFocusOrder="0" pos="509 546 128 112" bgColOff="ff5c6ba4"
+              buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="a6b474474542d949" memberName="textButton_File"
+              virtualName="" explicitFocusOrder="0" pos="335 16 88 32" bgColOff="ff5c68a4"
+              buttonText="File" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="8ce1efdaaaecd2c6" memberName="textButton_BPM"
+              virtualName="" explicitFocusOrder="0" pos="439 16 64 32" bgColOff="ff5c68a4"
+              buttonText="120" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="new button" id="7d3780f65c2bfb80" memberName="textButton_Stop"
+              virtualName="" explicitFocusOrder="0" pos="522 22 22 22" bgColOff="c1ff0a0a"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
