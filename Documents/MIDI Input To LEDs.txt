@@ -1,0 +1,31 @@
+Using MIDI Input to set the RGB LEDs:
+
+On MIDI Channel 1 - Note:
+
+    34: enable LEDs using the internal configuration. Will still react to MIDI input, but will also override when you press a button;
+    35: disable internal LED configuration and only react to LED changes by using MIDI notes;
+    36: set all LEDs to white;
+    37: set all LEDs to Red;
+    38: set all LEDs to Green;
+    39: set all LEDs to Blue;
+    40: go to page 1;
+    41: go to page 2;
+    42: go to page 3;
+    43: go to page 4;
+    44: go to page 5;
+    45: go to page 6;
+    46: go to page 7;
+    47: flash all LEDs red (one time);
+    48~: set individual LEDs white;
+    64~: set individual LEDs red;
+    80~: set individual LEDs green;
+    96~: set individual LEDs blue;
+
+On MIDI Channel 2 - Note:
+
+    36~: blink slow individual LEDs white;
+    52~: blink fast individual LEDs white;
+
+On MIDI Channel 3:
+
+Here you can set RGB values for each LED individualy, using 3 notes velocity. Each note velocity will set the RGB value of the LED. Translating the 0 ~ 127 value to 0 ~ 255 of the color. Notes 36 to 51 will set the R (red) channel. Notes 52 to 67 will set the G (green) channel and above will set the B (blue) channel and update the LED. The R and G channels doesn't update the LED. This way you can set any color that you want for each LED.

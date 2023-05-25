@@ -35,6 +35,7 @@ void normalMode_ButtonDown(byte button)
     case kNoteOnOff: midiSendNote(buttonsStruct[currentPage][button].value1, buttonsStruct[currentPage][button].value2, true); break;
     case kMIDI_CC: midiSendCC(button, 127); break;
     case kActionOnHold: normalMode_Action(buttonsStruct[currentPage][button].value1, button); break;
+    case kAudioLoop: midiSendAudioLoop(button, true);
     //
     case kNoteOnOffLatch: 
       if (buttonsStruct[currentPage][button].valueChar == 0) 
@@ -74,7 +75,8 @@ void normalMode_ButtonRelease(byte button)
     strip.show();
   }
   //
-  normalMode_ButtonReleaseType(buttonsStruct[currentPage][button].type, buttonsStruct[currentPage][button].value1, buttonsStruct[currentPage][button].value2, buttonsStruct[currentPage][button].valueChar);
+  if (buttonsStruct[currentPage][button].type == kAudioLoop) midiSendAudioLoop(button, false);
+  else normalMode_ButtonReleaseType(buttonsStruct[currentPage][button].type, buttonsStruct[currentPage][button].value1, buttonsStruct[currentPage][button].value2, buttonsStruct[currentPage][button].valueChar);
 }
 //
 // ------------------------------------------------------------------------------------------------------------------------------------

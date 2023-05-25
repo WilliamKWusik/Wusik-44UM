@@ -40,7 +40,7 @@ midiEventPacket_t midiRX;
 byte machineID = 0;
 byte bothTopButtonsHold = 0;
 bool turnOffButtonLEDs = false; // Can be used to handle all leds via MIDI instead //
-uint8_t data[4];
+uint8_t data[8];
 bool flushMIDI = false;
 byte eepromVersion = 1;
 byte currentMode = 0;

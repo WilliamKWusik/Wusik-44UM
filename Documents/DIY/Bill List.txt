@@ -1,0 +1,9 @@
+You will need to source the following items (not included in this kit) and solder everything. No PCB is required as we will solder everything directly to the Arduino Pro Micro board.
+
+-    Arduino Pro Micro (based on the ATmega32U4). This is the small board, NOT the Leonardo one (see pictures above). Don't get one with headers soldered and don't solder the headers if they come with.;
+-    USB Cable to connect the Arduino Pro Micro to the computer. Be sure it's a DATA cable as there are some cheap charger cables around the internet;
+-    32 RGB LEDs in a 5050 5 Volts (5V) LED Strip that uses the Ws2812b chip format and the size you can see in the pictures above. But the size should be 12mm between each LED and 16.6 between each cutting point. 60 LEDs per Meter. The strip must NOT be covered with any protection, and should be raw;
+-    6x6x5mm Button Switches (see pictures above);
+-    Soldering Iron and Solder (get one that has a flux core);
+-    Wires to connect buttons to the Arduino board. See the pictures above for an example. I use those rainbow cables and just detach the wires as I need. 
+-    Super Glue to hold things together inside the case.

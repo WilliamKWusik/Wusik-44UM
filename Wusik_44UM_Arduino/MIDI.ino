@@ -144,3 +144,18 @@ void midiSendCC(byte button, byte value)
   MidiUSB.write(data, 4);
   flushMIDI = true;
 }
+//
+// ------------------------------------------------------------------------------------------------------------------------------------
+void midiSendAudioLoop(byte button, bool isRelease)
+{
+  data[0] = 0x4;
+  data[1] = 0xF0;
+  data[2] = 0x78; // 'w'
+  data[3] = machineID;
+  data[4] = button;
+  if (isRelease) data[5] = 1; else data[5] = 0;
+  data[6] = 0xF7;
+  MidiUSB.write(data, 7);
+  //
+  flushMIDI = true;
+}
