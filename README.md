@@ -21,4 +21,4 @@ https://www.patreon.com/williamkwusik
 
 https://ko-fi.com/williamkalfelz
 
-![Picture](images/Picture (2).jpeg?raw=true "Picture")
+![Picture](./images/Picture (2).jpeg?raw=true "Picture")
