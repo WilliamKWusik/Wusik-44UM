@@ -14,5 +14,9 @@ Featuring:
 - Multiple options for setting the device directly: MIDICC, Note On/Off, Note On/Off Latch. Just press and hold both top buttons for a few seconds to enter the configuration swap option;
 - The unit also receives MIDI which can be used to set the RGB LEDs using note on/off. This is great for when you want to change LEDs with a sequencer or create your own App to handle LEDs. One particular note will turn on and off the unit hanlding of LEDs and will only react to input notes to set leds.
 
-Support this project by ordering a full unit or basic kit from the Wusik.com site.
+Support this project by ordering a full unit or basic kit from the Wusik.com site or by using any of the links below.
 https://www.wusik.com/online-store/Hardware-c150413262
+
+https://www.patreon.com/williamkwusik
+
+https://ko-fi.com/williamkalfelz
