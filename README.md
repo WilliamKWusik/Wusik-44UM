@@ -20,3 +20,5 @@ https://www.wusik.com/online-store/Hardware-c150413262
 https://www.patreon.com/williamkwusik
 
 https://ko-fi.com/williamkalfelz
+
+![Picture](images/Picture (2).jpeg?raw=true "Picture")
