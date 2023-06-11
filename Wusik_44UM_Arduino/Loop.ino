@@ -57,5 +57,11 @@ void loop()
   //
   buttonsDown = buttonsReleased = 0;
   //
+  if (updateFromFlash != 0)
+  {
+    updateFromFlash--;
+    if (updateFromFlash == 0) updateButtonsOffColor();
+  }
+  //
   RGBBlink();
 }

@@ -102,7 +102,16 @@ void normalMode_Action(byte action, byte value)
 {
   switch(action)
   {
-    case kNextPage: if (currentPage < (MAX_PAGES - 1)) currentPage++; break;
+    case kNextPage: 
+      if (remoteMode)
+      {
+        if (currentPage < 3) currentPage++; 
+      }
+      else
+      {
+        if (currentPage < (MAX_PAGES - 1)) currentPage++; 
+      }
+      break;
     case kPreviousPage: if (currentPage > 0) currentPage--; break;
     case kGoToPage: currentPage = value; break;
     //

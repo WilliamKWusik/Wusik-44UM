@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PROPERTIES>
+  <VALUE name="Background Colour" val="#FF444444"/>
+  <VALUE name="Beat Flash Colour" val="#44FF0000"/>
+  <VALUE name="Beat First Flash Colour" val="#66FF6666"/>
+  <VALUE name="Measure Flash Colour" val="#666666FF"/>
+  <VALUE name="Grid Colour" val="#06FFFFFF"/>
+  <VALUE name="Grid Size" val="50.0"/>
+  <VALUE name="Snap To Grid" val="1"/>
+  <VALUE name="Show Grid" val="1"/>
+  <VALUE name="Auto Start Clock" val="1"/>
+  <VALUE name="Global Font Name" val="Verdana"/>
+  <VALUE name="Auto Flash Decay" val="120"/>
+  <VALUE name="Disable F5 Switch Key" val=""/>
+  <VALUE name="Back Image Path" val="C:\Work Ready\Wusik 44UM\Wusik-44UM\Wusik_PR44_Performance_App\_Release\Wusik PR44 Data\Images"/>
+  <VALUE name="Image Path" val="C:\Work Ready\Wusik 44UM\Wusik-44UM\Wusik_PR44_Performance_App\_Release\Wusik PR44 Data\Images"/>
+  <VALUE name="Complete Settings" val="1"/>
+  <VALUE name="Audio Path" val="C:\Work Ready\Wusik 44UM\Wusik-44UM\Wusik_PR44_Performance_App\_Release\Wusik PR44 Data"/>
+</PROPERTIES>

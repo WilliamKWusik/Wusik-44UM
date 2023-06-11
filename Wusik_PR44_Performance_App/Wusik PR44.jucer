@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="dLHmGJ" name="Wusik PR44" projectType="audioplug" pluginFormats="buildStandalone,buildVST,buildVST3"
+              pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn"
+              pluginManufacturer="Wusik" pluginManufacturerCode="Wusk" pluginCode="WR44"
+              pluginChannelConfigs="{2,2}" companyName="Wusik" companyCopyright="2021"
+              companyWebsite="www.Wusik.com" jucerFormatVersion="1">
+  <MAINGROUP id="xEJh2d" name="Wusik PR44">
+    <GROUP id="{EAED1920-85D9-B496-8200-66720D902346}" name="Source">
+      <FILE id="N6NdOY" name="PixelBlenders.h" compile="0" resource="0" file="Source/PixelBlenders.h"/>
+      <FILE id="yNdxkz" name="ImageOptions.cpp" compile="1" resource="0"
+            file="Source/ImageOptions.cpp"/>
+      <FILE id="OSDgwz" name="ImageOptions.h" compile="0" resource="0" file="Source/ImageOptions.h"/>
+      <FILE id="o7jCbi" name="LeButton.cpp" compile="1" resource="0" file="Source/LeButton.cpp"/>
+      <FILE id="aXhIB6" name="LeButton.h" compile="0" resource="0" file="Source/LeButton.h"/>
+      <FILE id="a3RxFF" name="ObjectButtonOptions.cpp" compile="1" resource="0"
+            file="Source/ObjectButtonOptions.cpp"/>
+      <FILE id="Ki9UyF" name="ObjectButtonOptions.h" compile="0" resource="0"
+            file="Source/ObjectButtonOptions.h"/>
+      <FILE id="MeV0II" name="SoundOptions.cpp" compile="1" resource="0"
+            file="Source/SoundOptions.cpp"/>
+      <FILE id="diUpoG" name="SoundOptions.h" compile="0" resource="0" file="Source/SoundOptions.h"/>
+      <FILE id="ZeLyNC" name="ObjectOptions.cpp" compile="1" resource="0"
+            file="Source/ObjectOptions.cpp"/>
+      <FILE id="jrFSF2" name="ObjectOptions.h" compile="0" resource="0" file="Source/ObjectOptions.h"/>
+      <FILE id="zEpCD4" name="Options.cpp" compile="1" resource="0" file="Source/Options.cpp"/>
+      <FILE id="xfbwJr" name="Options.h" compile="0" resource="0" file="Source/Options.h"/>
+      <FILE id="yieHHy" name="Structure.h" compile="0" resource="0" file="Source/Structure.h"/>
+      <FILE id="hkA3nm" name="EditCompo.cpp" compile="1" resource="0" file="Source/EditCompo.cpp"/>
+      <FILE id="gdHUjK" name="EditCompo.h" compile="0" resource="0" file="Source/EditCompo.h"/>
+      <FILE id="ka5hOS" name="Intro Menu.cpp" compile="1" resource="0" file="Source/Intro Menu.cpp"/>
+      <FILE id="yOi9DT" name="Intro Menu.h" compile="0" resource="0" file="Source/Intro Menu.h"/>
+      <FILE id="h6W409" name="Process.cpp" compile="1" resource="0" file="Source/Process.cpp"/>
+      <FILE id="nJsdnP" name="Logo.png" compile="0" resource="1" file="Source/Logo.png"/>
+      <FILE id="pFVbfI" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="XUKskR" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="zV3RZW" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="hsCmPa" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2017 targetFolder="Builds/VisualStudio2017" smallIcon="nJsdnP" bigIcon="nJsdnP"
+            windowsTargetPlatformVersion="8.1">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" binaryPath="C:\Work Ready\Wusik 44UM\Wusik-44UM\Wusik_PR44_Performance_App\_Release"
+                       headerPath="c:\Work Ready\VST SDK 2.4 (r2)&#10;c:\Work Ready\ASIOSDK2.3.2\common"
+                       targetName="Wusik PR44"/>
+        <CONFIGURATION isDebug="0" name="Release" linkTimeOptimisation="0" headerPath="c:\Work Ready\VST SDK 2.4 (r2)&#10;c:\Work Ready\ASIOSDK2.3.2\common"
+                       binaryPath="C:\Work Ready\Wusik 44UM\Wusik-44UM\Wusik_PR44_Performance_App\_Release"
+                       targetName="Wusik PR44"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_core" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE 5/modules"/>
+        <MODULEPATH id="juce_opengl" path="../JUCE 5/modules"/>
+        <MODULEPATH id="WusikUtils" path="../JUCE 5 User Modules"/>
+        <MODULEPATH id="juce_dsp" path="../../../JUCE 5 Latest/modules"/>
+      </MODULEPATHS>
+    </VS2017>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="WusikUtils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+  <JUCEOPTIONS JUCE_VST3_CAN_REPLACE_VST2="0" JUCE_STRICT_REFCOUNTEDPOINTER="1"
+               JUCE_ASIO="1" JUCE_USE_MP3AUDIOFORMAT="1"/>
+</JUCERPROJECT>

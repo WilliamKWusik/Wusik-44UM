@@ -199,23 +199,7 @@ NewComponent::NewComponent ()
     textButton_File->addListener (this);
     textButton_File->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c68a4));
 
-    textButton_File->setBounds (335, 16, 88, 32);
-
-    textButton_BPM.reset (new juce::TextButton ("new button"));
-    addAndMakeVisible (textButton_BPM.get());
-    textButton_BPM->setButtonText (TRANS("120"));
-    textButton_BPM->addListener (this);
-    textButton_BPM->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff5c68a4));
-
-    textButton_BPM->setBounds (439, 16, 64, 32);
-
-    textButton_Stop.reset (new juce::TextButton ("new button"));
-    addAndMakeVisible (textButton_Stop.get());
-    textButton_Stop->setButtonText (juce::String());
-    textButton_Stop->addListener (this);
-    textButton_Stop->setColour (juce::TextButton::buttonColourId, juce::Colour (0xc1ff0a0a));
-
-    textButton_Stop->setBounds (522, 22, 22, 22);
+    textButton_File->setBounds (456, 16, 91, 32);
 
     cachedImage_logo_w100_100_png_1 = juce::ImageCache::getFromMemory (logo_w100_100_png, logo_w100_100_pngSize);
 
@@ -254,8 +238,6 @@ NewComponent::~NewComponent()
     button_17 = nullptr;
     button_18 = nullptr;
     textButton_File = nullptr;
-    textButton_BPM = nullptr;
-    textButton_Stop = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -449,16 +431,6 @@ void NewComponent::buttonClicked (juce::Button* buttonThatWasClicked)
         //[UserButtonCode_textButton_File] -- add your button handler code here..
         //[/UserButtonCode_textButton_File]
     }
-    else if (buttonThatWasClicked == textButton_BPM.get())
-    {
-        //[UserButtonCode_textButton_BPM] -- add your button handler code here..
-        //[/UserButtonCode_textButton_BPM]
-    }
-    else if (buttonThatWasClicked == textButton_Stop.get())
-    {
-        //[UserButtonCode_textButton_Stop] -- add your button handler code here..
-        //[/UserButtonCode_textButton_Stop]
-    }
 
     //[UserbuttonClicked_Post]
     //[/UserbuttonClicked_Post]
@@ -554,14 +526,8 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="509 546 128 112" bgColOff="ff5c6ba4"
               buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="new button" id="a6b474474542d949" memberName="textButton_File"
-              virtualName="" explicitFocusOrder="0" pos="335 16 88 32" bgColOff="ff5c68a4"
+              virtualName="" explicitFocusOrder="0" pos="456 16 91 32" bgColOff="ff5c68a4"
               buttonText="File" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
-  <TEXTBUTTON name="new button" id="8ce1efdaaaecd2c6" memberName="textButton_BPM"
-              virtualName="" explicitFocusOrder="0" pos="439 16 64 32" bgColOff="ff5c68a4"
-              buttonText="120" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
-  <TEXTBUTTON name="new button" id="7d3780f65c2bfb80" memberName="textButton_Stop"
-              virtualName="" explicitFocusOrder="0" pos="522 22 22 22" bgColOff="c1ff0a0a"
-              buttonText="" connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
