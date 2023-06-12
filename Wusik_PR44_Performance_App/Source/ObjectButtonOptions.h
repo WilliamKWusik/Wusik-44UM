@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.1.6
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -35,13 +35,13 @@
 */
 class ObjectButtonOptions  : public Component,
                              public ChangeListener,
-                             public ComboBox::Listener,
-                             public Button::Listener
+                             public juce::ComboBox::Listener,
+                             public juce::Button::Listener
 {
 public:
     //==============================================================================
     ObjectButtonOptions ();
-    ~ObjectButtonOptions();
+    ~ObjectButtonOptions() override;
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
@@ -58,7 +58,7 @@ public:
 		edColour = _colour;
 		edButton = _button;
 		//
-		auto* colourSelector = new ColourSelector();
+		auto* colourSelector = new ColourSelector(15 ^ ColourSelector::showAlphaChannel);
 		colourSelector->setName("Colour");
 		colourSelector->setCurrentColour(*_colour);
 		colourSelector->addChangeListener(this);
@@ -69,10 +69,10 @@ public:
 
     //[/UserMethods]
 
-    void paint (Graphics& g) override;
+    void paint (juce::Graphics& g) override;
     void resized() override;
-    void comboBoxChanged (ComboBox* comboBoxThatHasChanged) override;
-    void buttonClicked (Button* buttonThatWasClicked) override;
+    void comboBoxChanged (juce::ComboBox* comboBoxThatHasChanged) override;
+    void buttonClicked (juce::Button* buttonThatWasClicked) override;
 
 
 
@@ -81,26 +81,26 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<Label> label5;
-    std::unique_ptr<ComboBox> comboBox_Action;
-    std::unique_ptr<Label> label7;
-    std::unique_ptr<TextButton> textButton_MIDI1;
-    std::unique_ptr<TextButton> textButton_MIDI2;
-    std::unique_ptr<Label> midiDataLabel1;
-    std::unique_ptr<Label> midiDataLabel2;
-    std::unique_ptr<TextButton> textButton_MIDI3;
-    std::unique_ptr<Label> midiDataLabel3;
-    std::unique_ptr<ComboBox> comboBox_Names;
-    std::unique_ptr<Label> labelClickColour;
-    std::unique_ptr<TextButton> textButton_ClickColour;
-    std::unique_ptr<Label> labelClickColourDecay;
-    std::unique_ptr<TextButton> textButton_ClickColourDecay;
-    std::unique_ptr<Label> labelFadeOut;
-    std::unique_ptr<TextButton> textButton_FadeOut;
-    std::unique_ptr<TextButton> textButton_Image;
-    std::unique_ptr<ToggleButton> toggleButton_Synced;
-    std::unique_ptr<Label> labelFadeState;
-    std::unique_ptr<ComboBox> comboBox_FadeState;
+    std::unique_ptr<juce::Label> label5;
+    std::unique_ptr<juce::ComboBox> comboBox_Action;
+    std::unique_ptr<juce::Label> label7;
+    std::unique_ptr<juce::TextButton> textButton_MIDI1;
+    std::unique_ptr<juce::TextButton> textButton_MIDI2;
+    std::unique_ptr<juce::Label> midiDataLabel1;
+    std::unique_ptr<juce::Label> midiDataLabel2;
+    std::unique_ptr<juce::TextButton> textButton_MIDI3;
+    std::unique_ptr<juce::Label> midiDataLabel3;
+    std::unique_ptr<juce::ComboBox> comboBox_Names;
+    std::unique_ptr<juce::Label> labelClickColour;
+    std::unique_ptr<juce::TextButton> textButton_ClickColour;
+    std::unique_ptr<juce::Label> labelClickColourDecay;
+    std::unique_ptr<juce::TextButton> textButton_ClickColourDecay;
+    std::unique_ptr<juce::Label> labelFadeOut;
+    std::unique_ptr<juce::TextButton> textButton_FadeOut;
+    std::unique_ptr<juce::TextButton> textButton_Image;
+    std::unique_ptr<juce::ToggleButton> toggleButton_Synced;
+    std::unique_ptr<juce::Label> labelFadeState;
+    std::unique_ptr<juce::ComboBox> comboBox_FadeState;
 
 
     //==============================================================================

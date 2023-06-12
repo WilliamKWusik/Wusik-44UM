@@ -455,24 +455,6 @@ void WusikPr44AudioProcessor::processBlock(AudioBuffer<float>& buffer, MidiBuffe
 			midiMessages.addEvents(tempBuffer, 0, buffer.getNumSamples(), 0);
 		}
 		//
-		/*if (flashBeat && flashTime == 0 && beatFlashDecayMS > 0)
-		{
-			flashBeat = false;
-			flashTime = int((double(lastSampleRate) / 1000.0) * double(beatFlashDecayMS));
-			flashTimeCounter = 0;
-			if (mainWindow != nullptr) mainWindow->repaint();
-		}
-		//
-		if (flashTime > 0)
-		{
-			flashTimeCounter++;
-			if (flashTimeCounter >= flashTime)
-			{
-				flashTime = flashTimeCounter = 0;
-				if (mainWindow != nullptr) mainWindow->repaint();
-			}
-		}*/
-		//
 		// The Sounds ------------------------------- //
 		ARRAY_Iterator(leObjects)
 		{

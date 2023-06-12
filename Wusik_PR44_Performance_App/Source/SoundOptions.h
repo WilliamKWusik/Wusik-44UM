@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.1.6
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -35,13 +35,13 @@
 */
 class SoundOptions  : public Component,
                       public ChangeListener,
-                      public Button::Listener,
-                      public ComboBox::Listener
+                      public juce::Button::Listener,
+                      public juce::ComboBox::Listener
 {
 public:
     //==============================================================================
     SoundOptions ();
-    ~SoundOptions();
+    ~SoundOptions() override;
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
@@ -59,7 +59,7 @@ public:
 		edColour = _colour;
 		edButton = _button;
 		//
-		auto* colourSelector = new ColourSelector();
+		auto* colourSelector = new ColourSelector(15 ^ ColourSelector::showAlphaChannel);
 		colourSelector->setName("Colour");
 		colourSelector->setCurrentColour(*_colour);
 		colourSelector->addChangeListener(this);
@@ -70,10 +70,10 @@ public:
 
     //[/UserMethods]
 
-    void paint (Graphics& g) override;
+    void paint (juce::Graphics& g) override;
     void resized() override;
-    void buttonClicked (Button* buttonThatWasClicked) override;
-    void comboBoxChanged (ComboBox* comboBoxThatHasChanged) override;
+    void buttonClicked (juce::Button* buttonThatWasClicked) override;
+    void comboBoxChanged (juce::ComboBox* comboBoxThatHasChanged) override;
 
 
 
@@ -82,52 +82,52 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<Label> label2;
-    std::unique_ptr<TextButton> textButton_PlayingColour;
-    std::unique_ptr<Label> label3;
-    std::unique_ptr<TextButton> textButton_QueuedColour;
-    std::unique_ptr<Label> label6;
-    std::unique_ptr<TextButton> textButton_Group;
-    std::unique_ptr<Label> label4;
-    std::unique_ptr<TextButton> textButton_GroupStop;
-    std::unique_ptr<Label> label5;
-    std::unique_ptr<TextButton> textButton_BackTo;
-    std::unique_ptr<ComboBox> comboBox_PlaybackType;
-    std::unique_ptr<Label> label10;
-    std::unique_ptr<ToggleButton> toggleButton_MultiTrigger;
-    std::unique_ptr<ToggleButton> toggleButton_Looped;
-    std::unique_ptr<TextButton> textButton_Filename;
-    std::unique_ptr<ToggleButton> toggleButton_Embedded;
-    std::unique_ptr<ToggleButton> toggleButton_InstantStop;
-    std::unique_ptr<TextButton> textButton_ImagePlaying;
-    std::unique_ptr<TextButton> textButton_ImageQueued;
-    std::unique_ptr<Label> label11;
-    std::unique_ptr<ToggleButton> toggleButton_DragVolume;
-    std::unique_ptr<TextButton> textButton_DragVolumeMin;
-    std::unique_ptr<Label> label12;
-    std::unique_ptr<TextButton> textButton_DragVolumeMax;
-    std::unique_ptr<Label> label13;
-    std::unique_ptr<ComboBox> comboBox_RecordType;
-    std::unique_ptr<Label> label14;
-    std::unique_ptr<Label> label15;
-    std::unique_ptr<TextButton> textButton_Measures;
-    std::unique_ptr<Label> label16;
-    std::unique_ptr<TextButton> textButton_QueuedStopColour;
-    std::unique_ptr<TextButton> textButton_ImageStop;
-    std::unique_ptr<ToggleButton> toggleButton_LoopedSynced;
-    std::unique_ptr<ComboBox> comboBox_RecordSource;
-    std::unique_ptr<Label> label18;
-    std::unique_ptr<Label> label19;
-    std::unique_ptr<TextButton> textButton_RecordColour;
-    std::unique_ptr<TextButton> textButton_ImageRecord;
-    std::unique_ptr<ComboBox> comboBox_MouseVolumeType;
-    std::unique_ptr<ComboBox> comboBox_RecordMouse;
-    std::unique_ptr<Label> label20;
-    std::unique_ptr<Label> labelFadeState;
-    std::unique_ptr<ComboBox> comboBox_FadeState;
-    std::unique_ptr<ToggleButton> toggleButton_StopOnEnvelopeEnd;
-    std::unique_ptr<TextButton> textButton_Volume;
-    std::unique_ptr<ToggleButton> toggleButton_ColoursToFont;
+    std::unique_ptr<juce::Label> label2;
+    std::unique_ptr<juce::TextButton> textButton_PlayingColour;
+    std::unique_ptr<juce::Label> label3;
+    std::unique_ptr<juce::TextButton> textButton_QueuedColour;
+    std::unique_ptr<juce::Label> label6;
+    std::unique_ptr<juce::TextButton> textButton_Group;
+    std::unique_ptr<juce::Label> label4;
+    std::unique_ptr<juce::TextButton> textButton_GroupStop;
+    std::unique_ptr<juce::Label> label5;
+    std::unique_ptr<juce::TextButton> textButton_BackTo;
+    std::unique_ptr<juce::ComboBox> comboBox_PlaybackType;
+    std::unique_ptr<juce::Label> label10;
+    std::unique_ptr<juce::ToggleButton> toggleButton_MultiTrigger;
+    std::unique_ptr<juce::ToggleButton> toggleButton_Looped;
+    std::unique_ptr<juce::TextButton> textButton_Filename;
+    std::unique_ptr<juce::ToggleButton> toggleButton_Embedded;
+    std::unique_ptr<juce::ToggleButton> toggleButton_InstantStop;
+    std::unique_ptr<juce::TextButton> textButton_ImagePlaying;
+    std::unique_ptr<juce::TextButton> textButton_ImageQueued;
+    std::unique_ptr<juce::Label> label11;
+    std::unique_ptr<juce::ToggleButton> toggleButton_DragVolume;
+    std::unique_ptr<juce::TextButton> textButton_DragVolumeMin;
+    std::unique_ptr<juce::Label> label12;
+    std::unique_ptr<juce::TextButton> textButton_DragVolumeMax;
+    std::unique_ptr<juce::Label> label13;
+    std::unique_ptr<juce::ComboBox> comboBox_RecordType;
+    std::unique_ptr<juce::Label> label14;
+    std::unique_ptr<juce::Label> label15;
+    std::unique_ptr<juce::TextButton> textButton_Measures;
+    std::unique_ptr<juce::Label> label16;
+    std::unique_ptr<juce::TextButton> textButton_QueuedStopColour;
+    std::unique_ptr<juce::TextButton> textButton_ImageStop;
+    std::unique_ptr<juce::ToggleButton> toggleButton_LoopedSynced;
+    std::unique_ptr<juce::ComboBox> comboBox_RecordSource;
+    std::unique_ptr<juce::Label> label18;
+    std::unique_ptr<juce::Label> label19;
+    std::unique_ptr<juce::TextButton> textButton_RecordColour;
+    std::unique_ptr<juce::TextButton> textButton_ImageRecord;
+    std::unique_ptr<juce::ComboBox> comboBox_MouseVolumeType;
+    std::unique_ptr<juce::ComboBox> comboBox_RecordMouse;
+    std::unique_ptr<juce::Label> label20;
+    std::unique_ptr<juce::Label> labelFadeState;
+    std::unique_ptr<juce::ComboBox> comboBox_FadeState;
+    std::unique_ptr<juce::ToggleButton> toggleButton_StopOnEnvelopeEnd;
+    std::unique_ptr<juce::TextButton> textButton_Volume;
+    std::unique_ptr<juce::ToggleButton> toggleButton_ColoursToFont;
 
 
     //==============================================================================

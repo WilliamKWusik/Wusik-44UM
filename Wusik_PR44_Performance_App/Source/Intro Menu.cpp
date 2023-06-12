@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.1.6
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -22,8 +22,8 @@
 /*
 
 	Jan 05 2021 - BETA 00	Initial Release
-	Jan 06 2021 - BETA 02	Fixed the loading of images for both templates types. 
-							Added a warning message when trying to Play an empty project. 
+	Jan 06 2021 - BETA 02	Fixed the loading of images for both templates types.
+							Added a warning message when trying to Play an empty project.
 							Added warning messages for objects that are not complete. EG: missing audio or button action.
 							Added the code for Group, GroupStop and GoBackToGroup. Try adding more objects to a group and see how it works.
 
@@ -43,25 +43,25 @@ IntroMenu::IntroMenu ()
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
 
-    textButtonLaunch.reset (new TextButton ("launch"));
+    textButtonLaunch.reset (new juce::TextButton ("launch"));
     addAndMakeVisible (textButtonLaunch.get());
     textButtonLaunch->setButtonText (TRANS("Play"));
-    textButtonLaunch->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight | Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    textButtonLaunch->setConnectedEdges (juce::Button::ConnectedOnLeft | juce::Button::ConnectedOnRight | juce::Button::ConnectedOnTop | juce::Button::ConnectedOnBottom);
     textButtonLaunch->addListener (this);
-    textButtonLaunch->setColour (TextButton::buttonColourId, Colour (0xb40000ff));
+    textButtonLaunch->setColour (juce::TextButton::buttonColourId, juce::Colour (0xb40000ff));
 
     textButtonLaunch->setBounds (94, 224, 176, 112);
 
-    textButtonEdit.reset (new TextButton ("edit"));
+    textButtonEdit.reset (new juce::TextButton ("edit"));
     addAndMakeVisible (textButtonEdit.get());
     textButtonEdit->setButtonText (TRANS("Edit"));
-    textButtonEdit->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight | Button::ConnectedOnTop | Button::ConnectedOnBottom);
+    textButtonEdit->setConnectedEdges (juce::Button::ConnectedOnLeft | juce::Button::ConnectedOnRight | juce::Button::ConnectedOnTop | juce::Button::ConnectedOnBottom);
     textButtonEdit->addListener (this);
-    textButtonEdit->setColour (TextButton::buttonColourId, Colour (0xb40000ff));
+    textButtonEdit->setColour (juce::TextButton::buttonColourId, juce::Colour (0xb40000ff));
 
     textButtonEdit->setBounds (380, 224, 176, 112);
 
-    cachedImage_logo_png_1 = ImageCache::getFromMemory (logo_png, logo_pngSize);
+    cachedImage_logo_png_1 = juce::ImageCache::getFromMemory (logo_png, logo_pngSize);
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -91,16 +91,16 @@ IntroMenu::~IntroMenu()
 }
 
 //==============================================================================
-void IntroMenu::paint (Graphics& g)
+void IntroMenu::paint (juce::Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff161616));
+    g.fillAll (juce::Colour (0xff161616));
 
     {
         int x = 15, y = 11, width = 609, height = 397;
-        Colour fillColour = Colours::black;
+        juce::Colour fillColour = juce::Colours::black;
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
@@ -111,30 +111,30 @@ void IntroMenu::paint (Graphics& g)
         int x = 255, y = 35, width = 136, height = 125;
         //[UserPaintCustomArguments] Customize the painting arguments here..
 
-			x = (getWidth() / 2) - (width  / 2);
+    			x = (getWidth() / 2) - (width  / 2);
 
         //[/UserPaintCustomArguments]
-        g.setColour (Colours::black);
+        g.setColour (juce::Colours::black);
         g.drawImageWithin (cachedImage_logo_png_1,
                            x, y, width, height,
-                           RectanglePlacement::centred,
+                           juce::RectanglePlacement::centred,
                            false);
     }
 
     {
         int x = 223, y = 155, width = 200, height = 30;
-        String text (TRANS("Wusik PR44"));
-        Colour fillColour = Colours::white;
+        juce::String text (TRANS("Wusik PR44"));
+        juce::Colour fillColour = juce::Colours::white;
         //[UserPaintCustomArguments] Customize the painting arguments here..
 
-			x = 0;
-			width = getWidth();
+    			x = 0;
+    			width = getWidth();
 
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
-        g.setFont (Font ("Verdana", 28.00f, Font::plain).withTypefaceStyle ("Regular"));
+        g.setFont (juce::Font ("Verdana", 28.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
         g.drawText (text, x, y, width, height,
-                    Justification::centred, true);
+                    juce::Justification::centred, true);
     }
 
     //[UserPaint] Add your own custom painting code here..
@@ -166,7 +166,7 @@ void IntroMenu::resized()
     //[/UserResized]
 }
 
-void IntroMenu::buttonClicked (Button* buttonThatWasClicked)
+void IntroMenu::buttonClicked (juce::Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]

@@ -70,7 +70,7 @@ void WusikPr44AudioProcessor::loadData()
 		lastBackImagePath = userSettings->getValue("Back Image Path");
 		lastLoadedAudioPath = userSettings->getValue("Audio Path");
 		lastLoadedImage = userSettings->getValue("Image Path");
-		globalFontName = userSettings->getValue("Global Font Name");
+		globalFontName = "Verdana";
 		globalFont = Font(globalFontName, 32.0f, 0);
 		beatFlashDecayMS = userSettings->getIntValue("Auto Flash Decay");
 		disableF5SwitchKey = userSettings->getBoolValue("Disable F5 Switch Key");

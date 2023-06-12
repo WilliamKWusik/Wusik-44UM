@@ -68,7 +68,7 @@ public:
 		edColour = _colour;
 		edButton = _button;
 		//
-		auto* colourSelector = new ColourSelector();
+		auto* colourSelector = new ColourSelector(15 ^ ColourSelector::showAlphaChannel);
 		colourSelector->setName("Colour");
 		colourSelector->setCurrentColour(*_colour);
 		colourSelector->addChangeListener(this);

@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.1.6
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -21,7 +21,7 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include "PluginProcessor.h"
-#include "Options.h"''
+#include "Options.h"
 #include "LeButton.h"
 //[/Headers]
 
@@ -42,7 +42,7 @@ class EditCompo  : public Component,
 public:
     //==============================================================================
     EditCompo ();
-    ~EditCompo();
+    ~EditCompo() override;
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
@@ -53,7 +53,7 @@ public:
 	int getSnapToGrid(int value);
 	void updateObjects();
 	void buttonClicked(Button* buttonThatWasClicked) override;
-	bool keyPressed(const KeyPress &key) 
+	bool keyPressed(const KeyPress &key)
 	{
 		if (!((WusikPr44AudioProcessor*)parent)->isEditing && key.getKeyCode() == KeyPress::F4Key && key.getModifiers().isAltDown())
 		{
@@ -76,11 +76,11 @@ public:
 
     //[/UserMethods]
 
-    void paint (Graphics& g) override;
+    void paint (juce::Graphics& g) override;
     void resized() override;
-    void filesDropped (const StringArray& filenames, int mouseX, int mouseY) override;
-    void mouseMove (const MouseEvent& e) override;
-    void mouseUp (const MouseEvent& e) override;
+    void filesDropped (const juce::StringArray& filenames, int mouseX, int mouseY) override;
+    void mouseMove (const juce::MouseEvent& e) override;
+    void mouseUp (const juce::MouseEvent& e) override;
 
 
 

@@ -7,21 +7,22 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.1.6
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
 
 //[Headers] You can add your own extra header files here...
+#include "PluginEditor.h"
 //[/Headers]
 
 #include "EditCompo.h"
-#include "PluginEditor.h"
+
 
 //[MiscUserDefs] You can add your own user definitions and misc code here...
 //[/MiscUserDefs]
@@ -68,7 +69,7 @@ EditCompo::~EditCompo()
 }
 
 //==============================================================================
-void EditCompo::paint (Graphics& g)
+void EditCompo::paint (juce::Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
 
@@ -155,13 +156,13 @@ void EditCompo::resized()
     //[/UserResized]
 }
 
-void EditCompo::filesDropped (const StringArray& filenames, int mouseX, int mouseY)
+void EditCompo::filesDropped (const juce::StringArray& filenames, int mouseX, int mouseY)
 {
     //[UserCode_filesDropped] -- Add your code here...
     //[/UserCode_filesDropped]
 }
 
-void EditCompo::mouseMove (const MouseEvent& e)
+void EditCompo::mouseMove (const juce::MouseEvent& e)
 {
     //[UserCode_mouseMove] -- Add your code here...
 
@@ -170,7 +171,7 @@ void EditCompo::mouseMove (const MouseEvent& e)
     //[/UserCode_mouseMove]
 }
 
-void EditCompo::mouseUp (const MouseEvent& e)
+void EditCompo::mouseUp (const juce::MouseEvent& e)
 {
     //[UserCode_mouseUp] -- Add your code here...
 

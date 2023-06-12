@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.1.6
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -34,12 +34,12 @@
                                                                     //[/Comments]
 */
 class IntroMenu  : public Component,
-                   public Button::Listener
+                   public juce::Button::Listener
 {
 public:
     //==============================================================================
     IntroMenu ();
-    ~IntroMenu();
+    ~IntroMenu() override;
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
@@ -49,9 +49,9 @@ public:
 
     //[/UserMethods]
 
-    void paint (Graphics& g) override;
+    void paint (juce::Graphics& g) override;
     void resized() override;
-    void buttonClicked (Button* buttonThatWasClicked) override;
+    void buttonClicked (juce::Button* buttonThatWasClicked) override;
 
     // Binary resources:
     static const char* logo_png;
@@ -63,9 +63,9 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<TextButton> textButtonLaunch;
-    std::unique_ptr<TextButton> textButtonEdit;
-    Image cachedImage_logo_png_1;
+    std::unique_ptr<juce::TextButton> textButtonLaunch;
+    std::unique_ptr<juce::TextButton> textButtonEdit;
+    juce::Image cachedImage_logo_png_1;
 
 
     //==============================================================================

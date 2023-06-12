@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.1.6
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -38,22 +38,22 @@ ObjectButtonOptions::ObjectButtonOptions ()
 
     //[/Constructor_pre]
 
-    label5.reset (new Label ("new label",
-                             TRANS("Action")));
+    label5.reset (new juce::Label ("new label",
+                                   TRANS("Action")));
     addAndMakeVisible (label5.get());
-    label5->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label5->setJustificationType (Justification::centredLeft);
+    label5->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label5->setJustificationType (juce::Justification::centredLeft);
     label5->setEditable (false, false, false);
-    label5->setColour (TextEditor::textColourId, Colours::black);
-    label5->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label5->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label5->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label5->setBounds (24, 100, 72, 24);
 
-    comboBox_Action.reset (new ComboBox ("combo Fonts"));
+    comboBox_Action.reset (new juce::ComboBox ("combo Fonts"));
     addAndMakeVisible (comboBox_Action.get());
     comboBox_Action->setEditableText (false);
-    comboBox_Action->setJustificationType (Justification::centred);
-    comboBox_Action->setTextWhenNothingSelected (String());
+    comboBox_Action->setJustificationType (juce::Justification::centred);
+    comboBox_Action->setTextWhenNothingSelected (juce::String());
     comboBox_Action->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     comboBox_Action->addItem (TRANS("None"), 1);
     comboBox_Action->addItem (TRANS("Start/Stop"), 2);
@@ -82,172 +82,172 @@ ObjectButtonOptions::ObjectButtonOptions ()
 
     comboBox_Action->setBounds (100, 100, 180, 24);
 
-    label7.reset (new Label ("new label",
-                             TRANS("MIDI")));
+    label7.reset (new juce::Label ("new label",
+                                   TRANS("MIDI")));
     addAndMakeVisible (label7.get());
-    label7->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label7->setJustificationType (Justification::centredLeft);
+    label7->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label7->setJustificationType (juce::Justification::centredLeft);
     label7->setEditable (false, false, false);
-    label7->setColour (TextEditor::textColourId, Colours::black);
-    label7->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label7->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label7->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label7->setBounds (24, 142, 48, 24);
 
-    textButton_MIDI1.reset (new TextButton ("button BPM"));
+    textButton_MIDI1.reset (new juce::TextButton ("button BPM"));
     addAndMakeVisible (textButton_MIDI1.get());
-    textButton_MIDI1->setButtonText (String());
+    textButton_MIDI1->setButtonText (juce::String());
     textButton_MIDI1->addListener (this);
-    textButton_MIDI1->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_MIDI1->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_MIDI1->setBounds (91, 142, 56, 24);
 
-    textButton_MIDI2.reset (new TextButton ("button BPM"));
+    textButton_MIDI2.reset (new juce::TextButton ("button BPM"));
     addAndMakeVisible (textButton_MIDI2.get());
-    textButton_MIDI2->setButtonText (String());
+    textButton_MIDI2->setButtonText (juce::String());
     textButton_MIDI2->addListener (this);
-    textButton_MIDI2->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_MIDI2->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_MIDI2->setBounds (160, 142, 56, 24);
 
-    midiDataLabel1.reset (new Label ("new label",
-                                     TRANS("A")));
+    midiDataLabel1.reset (new juce::Label ("new label",
+                                           TRANS("A")));
     addAndMakeVisible (midiDataLabel1.get());
-    midiDataLabel1->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    midiDataLabel1->setJustificationType (Justification::centred);
+    midiDataLabel1->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    midiDataLabel1->setJustificationType (juce::Justification::centred);
     midiDataLabel1->setEditable (false, false, false);
-    midiDataLabel1->setColour (TextEditor::textColourId, Colours::black);
-    midiDataLabel1->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    midiDataLabel1->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    midiDataLabel1->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     midiDataLabel1->setBounds (95, 170, 48, 24);
 
-    midiDataLabel2.reset (new Label ("new label",
-                                     TRANS("B")));
+    midiDataLabel2.reset (new juce::Label ("new label",
+                                           TRANS("B")));
     addAndMakeVisible (midiDataLabel2.get());
-    midiDataLabel2->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    midiDataLabel2->setJustificationType (Justification::centred);
+    midiDataLabel2->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    midiDataLabel2->setJustificationType (juce::Justification::centred);
     midiDataLabel2->setEditable (false, false, false);
-    midiDataLabel2->setColour (TextEditor::textColourId, Colours::black);
-    midiDataLabel2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    midiDataLabel2->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    midiDataLabel2->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     midiDataLabel2->setBounds (164, 170, 48, 24);
 
-    textButton_MIDI3.reset (new TextButton ("button BPM"));
+    textButton_MIDI3.reset (new juce::TextButton ("button BPM"));
     addAndMakeVisible (textButton_MIDI3.get());
-    textButton_MIDI3->setButtonText (String());
+    textButton_MIDI3->setButtonText (juce::String());
     textButton_MIDI3->addListener (this);
-    textButton_MIDI3->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_MIDI3->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_MIDI3->setBounds (228, 142, 56, 24);
 
-    midiDataLabel3.reset (new Label ("new label",
-                                     TRANS("C")));
+    midiDataLabel3.reset (new juce::Label ("new label",
+                                           TRANS("C")));
     addAndMakeVisible (midiDataLabel3.get());
-    midiDataLabel3->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    midiDataLabel3->setJustificationType (Justification::centred);
+    midiDataLabel3->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    midiDataLabel3->setJustificationType (juce::Justification::centred);
     midiDataLabel3->setEditable (false, false, false);
-    midiDataLabel3->setColour (TextEditor::textColourId, Colours::black);
-    midiDataLabel3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    midiDataLabel3->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    midiDataLabel3->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     midiDataLabel3->setBounds (232, 170, 48, 24);
 
-    comboBox_Names.reset (new ComboBox ("combo Fonts"));
+    comboBox_Names.reset (new juce::ComboBox ("combo Fonts"));
     addAndMakeVisible (comboBox_Names.get());
     comboBox_Names->setEditableText (false);
-    comboBox_Names->setJustificationType (Justification::centred);
-    comboBox_Names->setTextWhenNothingSelected (String());
+    comboBox_Names->setJustificationType (juce::Justification::centred);
+    comboBox_Names->setTextWhenNothingSelected (juce::String());
     comboBox_Names->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     comboBox_Names->addListener (this);
 
     comboBox_Names->setBounds (100, 143, 180, 24);
 
-    labelClickColour.reset (new Label ("new label",
-                                       TRANS("Click Colour")));
+    labelClickColour.reset (new juce::Label ("new label",
+                                             TRANS("Click Colour")));
     addAndMakeVisible (labelClickColour.get());
-    labelClickColour->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    labelClickColour->setJustificationType (Justification::centredLeft);
+    labelClickColour->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    labelClickColour->setJustificationType (juce::Justification::centredLeft);
     labelClickColour->setEditable (false, false, false);
-    labelClickColour->setColour (TextEditor::textColourId, Colours::black);
-    labelClickColour->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    labelClickColour->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    labelClickColour->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     labelClickColour->setBounds (24, 18, 88, 25);
 
-    textButton_ClickColour.reset (new TextButton ("button Border Colour"));
+    textButton_ClickColour.reset (new juce::TextButton ("button Border Colour"));
     addAndMakeVisible (textButton_ClickColour.get());
-    textButton_ClickColour->setButtonText (String());
+    textButton_ClickColour->setButtonText (juce::String());
     textButton_ClickColour->addListener (this);
-    textButton_ClickColour->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_ClickColour->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_ClickColour->setBounds (113, 18, 56, 24);
 
-    labelClickColourDecay.reset (new Label ("new label",
-                                            TRANS("Decay")));
+    labelClickColourDecay.reset (new juce::Label ("new label",
+                                                  TRANS("Decay")));
     addAndMakeVisible (labelClickColourDecay.get());
-    labelClickColourDecay->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    labelClickColourDecay->setJustificationType (Justification::centredLeft);
+    labelClickColourDecay->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    labelClickColourDecay->setJustificationType (juce::Justification::centredLeft);
     labelClickColourDecay->setEditable (false, false, false);
-    labelClickColourDecay->setColour (TextEditor::textColourId, Colours::black);
-    labelClickColourDecay->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    labelClickColourDecay->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    labelClickColourDecay->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     labelClickColourDecay->setBounds (24, 58, 56, 25);
 
-    textButton_ClickColourDecay.reset (new TextButton ("button Border Colour"));
+    textButton_ClickColourDecay.reset (new juce::TextButton ("button Border Colour"));
     addAndMakeVisible (textButton_ClickColourDecay.get());
-    textButton_ClickColourDecay->setButtonText (String());
+    textButton_ClickColourDecay->setButtonText (juce::String());
     textButton_ClickColourDecay->addListener (this);
-    textButton_ClickColourDecay->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_ClickColourDecay->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_ClickColourDecay->setBounds (91, 58, 54, 24);
 
-    labelFadeOut.reset (new Label ("new label",
-                                   TRANS("Fade Rate")));
+    labelFadeOut.reset (new juce::Label ("new label",
+                                         TRANS("Fade Rate")));
     addAndMakeVisible (labelFadeOut.get());
-    labelFadeOut->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    labelFadeOut->setJustificationType (Justification::centredLeft);
+    labelFadeOut->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    labelFadeOut->setJustificationType (juce::Justification::centredLeft);
     labelFadeOut->setEditable (false, false, false);
-    labelFadeOut->setColour (TextEditor::textColourId, Colours::black);
-    labelFadeOut->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    labelFadeOut->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    labelFadeOut->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     labelFadeOut->setBounds (24, 198, 64, 25);
 
-    textButton_FadeOut.reset (new TextButton ("button BPM"));
+    textButton_FadeOut.reset (new juce::TextButton ("button BPM"));
     addAndMakeVisible (textButton_FadeOut.get());
-    textButton_FadeOut->setButtonText (String());
+    textButton_FadeOut->setButtonText (juce::String());
     textButton_FadeOut->addListener (this);
-    textButton_FadeOut->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_FadeOut->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_FadeOut->setBounds (91, 199, 56, 24);
 
-    textButton_Image.reset (new TextButton ("button Back Colour"));
+    textButton_Image.reset (new juce::TextButton ("button Back Colour"));
     addAndMakeVisible (textButton_Image.get());
     textButton_Image->setButtonText (TRANS("Image"));
     textButton_Image->addListener (this);
-    textButton_Image->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_Image->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_Image->setBounds (184, 18, 62, 24);
 
-    toggleButton_Synced.reset (new ToggleButton ("Show Grid"));
+    toggleButton_Synced.reset (new juce::ToggleButton ("Show Grid"));
     addAndMakeVisible (toggleButton_Synced.get());
     toggleButton_Synced->setButtonText (TRANS("Synced"));
     toggleButton_Synced->addListener (this);
 
     toggleButton_Synced->setBounds (160, 58, 112, 24);
 
-    labelFadeState.reset (new Label ("new label",
-                                     TRANS("Initial Fade State")));
+    labelFadeState.reset (new juce::Label ("new label",
+                                           TRANS("Initial Fade State")));
     addAndMakeVisible (labelFadeState.get());
-    labelFadeState->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    labelFadeState->setJustificationType (Justification::centredLeft);
+    labelFadeState->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    labelFadeState->setJustificationType (juce::Justification::centredLeft);
     labelFadeState->setEditable (false, false, false);
-    labelFadeState->setColour (TextEditor::textColourId, Colours::black);
-    labelFadeState->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    labelFadeState->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    labelFadeState->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     labelFadeState->setBounds (24, 235, 128, 25);
 
-    comboBox_FadeState.reset (new ComboBox ("combo Fonts"));
+    comboBox_FadeState.reset (new juce::ComboBox ("combo Fonts"));
     addAndMakeVisible (comboBox_FadeState.get());
     comboBox_FadeState->setEditableText (false);
-    comboBox_FadeState->setJustificationType (Justification::centred);
-    comboBox_FadeState->setTextWhenNothingSelected (String());
+    comboBox_FadeState->setJustificationType (juce::Justification::centred);
+    comboBox_FadeState->setTextWhenNothingSelected (juce::String());
     comboBox_FadeState->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     comboBox_FadeState->addItem (TRANS("Low"), 1);
     comboBox_FadeState->addItem (TRANS("High"), 2);
@@ -298,12 +298,12 @@ ObjectButtonOptions::~ObjectButtonOptions()
 }
 
 //==============================================================================
-void ObjectButtonOptions::paint (Graphics& g)
+void ObjectButtonOptions::paint (juce::Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff323e44));
+    g.fillAll (juce::Colour (0xff323e44));
 
     //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
@@ -318,7 +318,7 @@ void ObjectButtonOptions::resized()
     //[/UserResized]
 }
 
-void ObjectButtonOptions::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
+void ObjectButtonOptions::comboBoxChanged (juce::ComboBox* comboBoxThatHasChanged)
 {
     //[UsercomboBoxChanged_Pre]
 
@@ -373,7 +373,7 @@ void ObjectButtonOptions::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
     //[/UsercomboBoxChanged_Post]
 }
 
-void ObjectButtonOptions::buttonClicked (Button* buttonThatWasClicked)
+void ObjectButtonOptions::buttonClicked (juce::Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
 

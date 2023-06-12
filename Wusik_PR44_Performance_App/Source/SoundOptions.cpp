@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.1.6
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -39,109 +39,109 @@ SoundOptions::SoundOptions ()
 
     //[/Constructor_pre]
 
-    label2.reset (new Label ("new label",
-                             TRANS("Playing Colour")));
+    label2.reset (new juce::Label ("new label",
+                                   TRANS("Playing Colour")));
     addAndMakeVisible (label2.get());
-    label2->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label2->setJustificationType (Justification::centredLeft);
+    label2->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label2->setJustificationType (juce::Justification::centredLeft);
     label2->setEditable (false, false, false);
-    label2->setColour (TextEditor::textColourId, Colours::black);
-    label2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label2->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label2->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label2->setBounds (24, 321, 112, 25);
 
-    textButton_PlayingColour.reset (new TextButton ("button Border Colour"));
+    textButton_PlayingColour.reset (new juce::TextButton ("button Border Colour"));
     addAndMakeVisible (textButton_PlayingColour.get());
-    textButton_PlayingColour->setButtonText (String());
+    textButton_PlayingColour->setButtonText (juce::String());
     textButton_PlayingColour->addListener (this);
-    textButton_PlayingColour->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_PlayingColour->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_PlayingColour->setBounds (151, 323, 53, 24);
 
-    label3.reset (new Label ("new label",
-                             TRANS("Queued Colour")));
+    label3.reset (new juce::Label ("new label",
+                                   TRANS("Queued Colour")));
     addAndMakeVisible (label3.get());
-    label3->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label3->setJustificationType (Justification::centredLeft);
+    label3->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label3->setJustificationType (juce::Justification::centredLeft);
     label3->setEditable (false, false, false);
-    label3->setColour (TextEditor::textColourId, Colours::black);
-    label3->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label3->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label3->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label3->setBounds (24, 361, 112, 24);
 
-    textButton_QueuedColour.reset (new TextButton ("button Back Colour"));
+    textButton_QueuedColour.reset (new juce::TextButton ("button Back Colour"));
     addAndMakeVisible (textButton_QueuedColour.get());
-    textButton_QueuedColour->setButtonText (String());
+    textButton_QueuedColour->setButtonText (juce::String());
     textButton_QueuedColour->addListener (this);
-    textButton_QueuedColour->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_QueuedColour->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_QueuedColour->setBounds (151, 362, 53, 24);
 
-    label6.reset (new Label ("new label",
-                             TRANS("Group")));
+    label6.reset (new juce::Label ("new label",
+                                   TRANS("Group")));
     addAndMakeVisible (label6.get());
-    label6->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label6->setJustificationType (Justification::centredLeft);
+    label6->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label6->setJustificationType (juce::Justification::centredLeft);
     label6->setEditable (false, false, false);
-    label6->setColour (TextEditor::textColourId, Colours::black);
-    label6->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label6->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label6->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label6->setBounds (24, 187, 93, 24);
 
-    textButton_Group.reset (new TextButton ("button Font Colour"));
+    textButton_Group.reset (new juce::TextButton ("button Font Colour"));
     addAndMakeVisible (textButton_Group.get());
     textButton_Group->setTooltip (TRANS("If you set a group and don\'t enable \'Multi In The Same Group\', only one sound will play per group."));
-    textButton_Group->setButtonText (String());
+    textButton_Group->setButtonText (juce::String());
     textButton_Group->addListener (this);
-    textButton_Group->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_Group->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_Group->setBounds (131, 188, 149, 24);
 
-    label4.reset (new Label ("new label",
-                             TRANS("Group Stop")));
+    label4.reset (new juce::Label ("new label",
+                                   TRANS("Group Stop")));
     addAndMakeVisible (label4.get());
-    label4->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label4->setJustificationType (Justification::centredLeft);
+    label4->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label4->setJustificationType (juce::Justification::centredLeft);
     label4->setEditable (false, false, false);
-    label4->setColour (TextEditor::textColourId, Colours::black);
-    label4->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label4->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label4->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label4->setBounds (24, 227, 93, 24);
 
-    textButton_GroupStop.reset (new TextButton ("button Font Colour"));
+    textButton_GroupStop.reset (new juce::TextButton ("button Font Colour"));
     addAndMakeVisible (textButton_GroupStop.get());
     textButton_GroupStop->setTooltip (TRANS("When this object starts playing it will stop all objects with this group name."));
-    textButton_GroupStop->setButtonText (String());
+    textButton_GroupStop->setButtonText (juce::String());
     textButton_GroupStop->addListener (this);
-    textButton_GroupStop->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_GroupStop->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_GroupStop->setBounds (131, 228, 149, 24);
 
-    label5.reset (new Label ("new label",
-                             TRANS("Back To")));
+    label5.reset (new juce::Label ("new label",
+                                   TRANS("Back To")));
     addAndMakeVisible (label5.get());
-    label5->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label5->setJustificationType (Justification::centredLeft);
+    label5->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label5->setJustificationType (juce::Justification::centredLeft);
     label5->setEditable (false, false, false);
-    label5->setColour (TextEditor::textColourId, Colours::black);
-    label5->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label5->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label5->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label5->setBounds (24, 268, 93, 24);
 
-    textButton_BackTo.reset (new TextButton ("button Font Colour"));
+    textButton_BackTo.reset (new juce::TextButton ("button Font Colour"));
     addAndMakeVisible (textButton_BackTo.get());
     textButton_BackTo->setTooltip (TRANS("When selecting this object, it will stop all other objects and after it finishes playing it will play the selectd group."));
-    textButton_BackTo->setButtonText (String());
+    textButton_BackTo->setButtonText (juce::String());
     textButton_BackTo->addListener (this);
-    textButton_BackTo->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_BackTo->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_BackTo->setBounds (131, 269, 149, 24);
 
-    comboBox_PlaybackType.reset (new ComboBox ("new combo box"));
+    comboBox_PlaybackType.reset (new juce::ComboBox ("new combo box"));
     addAndMakeVisible (comboBox_PlaybackType.get());
     comboBox_PlaybackType->setEditableText (false);
-    comboBox_PlaybackType->setJustificationType (Justification::centredLeft);
-    comboBox_PlaybackType->setTextWhenNothingSelected (String());
+    comboBox_PlaybackType->setJustificationType (juce::Justification::centredLeft);
+    comboBox_PlaybackType->setTextWhenNothingSelected (juce::String());
     comboBox_PlaybackType->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     comboBox_PlaybackType->addItem (TRANS("Synced"), 1);
     comboBox_PlaybackType->addItem (TRANS("Poly Free"), 2);
@@ -149,40 +149,40 @@ SoundOptions::SoundOptions ()
 
     comboBox_PlaybackType->setBounds (131, 490, 133, 24);
 
-    label10.reset (new Label ("new label",
-                              TRANS("Playback Type")));
+    label10.reset (new juce::Label ("new label",
+                                    TRANS("Playback Type")));
     addAndMakeVisible (label10.get());
-    label10->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label10->setJustificationType (Justification::centredLeft);
+    label10->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label10->setJustificationType (juce::Justification::centredLeft);
     label10->setEditable (false, false, false);
-    label10->setColour (TextEditor::textColourId, Colours::black);
-    label10->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label10->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label10->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label10->setBounds (24, 490, 93, 24);
 
-    toggleButton_MultiTrigger.reset (new ToggleButton ("Show Grid"));
+    toggleButton_MultiTrigger.reset (new juce::ToggleButton ("Show Grid"));
     addAndMakeVisible (toggleButton_MultiTrigger.get());
     toggleButton_MultiTrigger->setButtonText (TRANS("Multi In The Same Group"));
     toggleButton_MultiTrigger->addListener (this);
 
     toggleButton_MultiTrigger->setBounds (24, 569, 200, 24);
 
-    toggleButton_Looped.reset (new ToggleButton ("Show Grid"));
+    toggleButton_Looped.reset (new juce::ToggleButton ("Show Grid"));
     addAndMakeVisible (toggleButton_Looped.get());
     toggleButton_Looped->setButtonText (TRANS("Is Looped"));
     toggleButton_Looped->addListener (this);
 
     toggleButton_Looped->setBounds (24, 603, 104, 24);
 
-    textButton_Filename.reset (new TextButton ("button Font Colour"));
+    textButton_Filename.reset (new juce::TextButton ("button Font Colour"));
     addAndMakeVisible (textButton_Filename.get());
     textButton_Filename->setButtonText (TRANS("Sound File"));
     textButton_Filename->addListener (this);
-    textButton_Filename->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_Filename->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_Filename->setBounds (16, 63, 288, 24);
 
-    toggleButton_Embedded.reset (new ToggleButton ("Show Grid"));
+    toggleButton_Embedded.reset (new juce::ToggleButton ("Show Grid"));
     addAndMakeVisible (toggleButton_Embedded.get());
     toggleButton_Embedded->setTooltip (TRANS("Include the audio into the host project file. Keep in mind that some hosts has a file limitation for project files."));
     toggleButton_Embedded->setButtonText (TRANS("Embedded"));
@@ -190,89 +190,89 @@ SoundOptions::SoundOptions ()
 
     toggleButton_Embedded->setBounds (208, 29, 96, 24);
 
-    toggleButton_InstantStop.reset (new ToggleButton ("Show Grid"));
+    toggleButton_InstantStop.reset (new juce::ToggleButton ("Show Grid"));
     addAndMakeVisible (toggleButton_InstantStop.get());
     toggleButton_InstantStop->setButtonText (TRANS("Instant Stop"));
     toggleButton_InstantStop->addListener (this);
 
     toggleButton_InstantStop->setBounds (24, 637, 150, 24);
 
-    textButton_ImagePlaying.reset (new TextButton ("button Back Colour"));
+    textButton_ImagePlaying.reset (new juce::TextButton ("button Back Colour"));
     addAndMakeVisible (textButton_ImagePlaying.get());
     textButton_ImagePlaying->setButtonText (TRANS("Image"));
     textButton_ImagePlaying->addListener (this);
-    textButton_ImagePlaying->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_ImagePlaying->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_ImagePlaying->setBounds (216, 323, 72, 24);
 
-    textButton_ImageQueued.reset (new TextButton ("button Back Colour"));
+    textButton_ImageQueued.reset (new juce::TextButton ("button Back Colour"));
     addAndMakeVisible (textButton_ImageQueued.get());
     textButton_ImageQueued->setButtonText (TRANS("Image"));
     textButton_ImageQueued->addListener (this);
-    textButton_ImageQueued->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_ImageQueued->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_ImageQueued->setBounds (216, 362, 72, 24);
 
-    label11.reset (new Label ("new label",
-                              TRANS("Volume")));
+    label11.reset (new juce::Label ("new label",
+                                    TRANS("Volume")));
     addAndMakeVisible (label11.get());
-    label11->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label11->setJustificationType (Justification::centredLeft);
+    label11->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label11->setJustificationType (juce::Justification::centredLeft);
     label11->setEditable (false, false, false);
-    label11->setColour (TextEditor::textColourId, Colours::black);
-    label11->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label11->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label11->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label11->setBounds (24, 27, 61, 25);
 
-    toggleButton_DragVolume.reset (new ToggleButton ("Show Grid"));
+    toggleButton_DragVolume.reset (new juce::ToggleButton ("Show Grid"));
     addAndMakeVisible (toggleButton_DragVolume.get());
     toggleButton_DragVolume->setButtonText (TRANS("Mouse Volume"));
     toggleButton_DragVolume->addListener (this);
 
     toggleButton_DragVolume->setBounds (24, 669, 128, 24);
 
-    textButton_DragVolumeMin.reset (new TextButton ("button Back Colour"));
+    textButton_DragVolumeMin.reset (new juce::TextButton ("button Back Colour"));
     addAndMakeVisible (textButton_DragVolumeMin.get());
-    textButton_DragVolumeMin->setButtonText (String());
+    textButton_DragVolumeMin->setButtonText (juce::String());
     textButton_DragVolumeMin->addListener (this);
-    textButton_DragVolumeMin->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_DragVolumeMin->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_DragVolumeMin->setBounds (168, 709, 92, 24);
 
-    label12.reset (new Label ("new label",
-                              TRANS("Min Vol")));
+    label12.reset (new juce::Label ("new label",
+                                    TRANS("Min Vol")));
     addAndMakeVisible (label12.get());
-    label12->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label12->setJustificationType (Justification::centredLeft);
+    label12->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label12->setJustificationType (juce::Justification::centredLeft);
     label12->setEditable (false, false, false);
-    label12->setColour (TextEditor::textColourId, Colours::black);
-    label12->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label12->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label12->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label12->setBounds (104, 709, 56, 24);
 
-    textButton_DragVolumeMax.reset (new TextButton ("button Back Colour"));
+    textButton_DragVolumeMax.reset (new juce::TextButton ("button Back Colour"));
     addAndMakeVisible (textButton_DragVolumeMax.get());
-    textButton_DragVolumeMax->setButtonText (String());
+    textButton_DragVolumeMax->setButtonText (juce::String());
     textButton_DragVolumeMax->addListener (this);
-    textButton_DragVolumeMax->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_DragVolumeMax->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_DragVolumeMax->setBounds (168, 748, 92, 24);
 
-    label13.reset (new Label ("new label",
-                              TRANS("Max Vol")));
+    label13.reset (new juce::Label ("new label",
+                                    TRANS("Max Vol")));
     addAndMakeVisible (label13.get());
-    label13->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label13->setJustificationType (Justification::centredLeft);
+    label13->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label13->setJustificationType (juce::Justification::centredLeft);
     label13->setEditable (false, false, false);
-    label13->setColour (TextEditor::textColourId, Colours::black);
-    label13->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label13->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label13->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label13->setBounds (104, 748, 56, 24);
 
-    comboBox_RecordType.reset (new ComboBox ("new combo box"));
+    comboBox_RecordType.reset (new juce::ComboBox ("new combo box"));
     addAndMakeVisible (comboBox_RecordType.get());
     comboBox_RecordType->setEditableText (false);
-    comboBox_RecordType->setJustificationType (Justification::centredLeft);
+    comboBox_RecordType->setJustificationType (juce::Justification::centredLeft);
     comboBox_RecordType->setTextWhenNothingSelected (TRANS("None"));
     comboBox_RecordType->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     comboBox_RecordType->addItem (TRANS("None"), 1);
@@ -284,65 +284,65 @@ SoundOptions::SoundOptions ()
 
     comboBox_RecordType->setBounds (139, 955, 133, 24);
 
-    label14.reset (new Label ("new label",
-                              TRANS("Record Type")));
+    label14.reset (new juce::Label ("new label",
+                                    TRANS("Record Type")));
     addAndMakeVisible (label14.get());
-    label14->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label14->setJustificationType (Justification::centredLeft);
+    label14->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label14->setJustificationType (juce::Justification::centredLeft);
     label14->setEditable (false, false, false);
-    label14->setColour (TextEditor::textColourId, Colours::black);
-    label14->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label14->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label14->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label14->setBounds (32, 955, 88, 24);
 
-    label15.reset (new Label ("new label",
-                              TRANS("Measures")));
+    label15.reset (new juce::Label ("new label",
+                                    TRANS("Measures")));
     addAndMakeVisible (label15.get());
-    label15->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label15->setJustificationType (Justification::centredLeft);
+    label15->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label15->setJustificationType (juce::Justification::centredLeft);
     label15->setEditable (false, false, false);
-    label15->setColour (TextEditor::textColourId, Colours::black);
-    label15->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label15->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label15->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label15->setBounds (24, 529, 72, 24);
 
-    textButton_Measures.reset (new TextButton ("button Back Colour"));
+    textButton_Measures.reset (new juce::TextButton ("button Back Colour"));
     addAndMakeVisible (textButton_Measures.get());
     textButton_Measures->setTooltip (TRANS("How many measures this audio has. Set to 0 for Project Settings."));
-    textButton_Measures->setButtonText (String());
+    textButton_Measures->setButtonText (juce::String());
     textButton_Measures->addListener (this);
-    textButton_Measures->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_Measures->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_Measures->setBounds (131, 530, 72, 24);
 
-    label16.reset (new Label ("new label",
-                              TRANS("Queued to Stop")));
+    label16.reset (new juce::Label ("new label",
+                                    TRANS("Queued to Stop")));
     addAndMakeVisible (label16.get());
-    label16->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label16->setJustificationType (Justification::centredLeft);
+    label16->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label16->setJustificationType (juce::Justification::centredLeft);
     label16->setEditable (false, false, false);
-    label16->setColour (TextEditor::textColourId, Colours::black);
-    label16->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label16->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label16->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label16->setBounds (24, 401, 120, 24);
 
-    textButton_QueuedStopColour.reset (new TextButton ("button Back Colour"));
+    textButton_QueuedStopColour.reset (new juce::TextButton ("button Back Colour"));
     addAndMakeVisible (textButton_QueuedStopColour.get());
-    textButton_QueuedStopColour->setButtonText (String());
+    textButton_QueuedStopColour->setButtonText (juce::String());
     textButton_QueuedStopColour->addListener (this);
-    textButton_QueuedStopColour->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_QueuedStopColour->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_QueuedStopColour->setBounds (151, 402, 53, 24);
 
-    textButton_ImageStop.reset (new TextButton ("button Back Colour"));
+    textButton_ImageStop.reset (new juce::TextButton ("button Back Colour"));
     addAndMakeVisible (textButton_ImageStop.get());
     textButton_ImageStop->setButtonText (TRANS("Image"));
     textButton_ImageStop->addListener (this);
-    textButton_ImageStop->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_ImageStop->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_ImageStop->setBounds (216, 402, 72, 24);
 
-    toggleButton_LoopedSynced.reset (new ToggleButton ("Show Grid"));
+    toggleButton_LoopedSynced.reset (new juce::ToggleButton ("Show Grid"));
     addAndMakeVisible (toggleButton_LoopedSynced.get());
     toggleButton_LoopedSynced->setTooltip (TRANS("Starts the audio only when the sequencer clock reaches the start of the measure"));
     toggleButton_LoopedSynced->setButtonText (TRANS("Synced"));
@@ -350,59 +350,59 @@ SoundOptions::SoundOptions ()
 
     toggleButton_LoopedSynced->setBounds (135, 603, 112, 24);
 
-    comboBox_RecordSource.reset (new ComboBox ("new combo box"));
+    comboBox_RecordSource.reset (new juce::ComboBox ("new combo box"));
     addAndMakeVisible (comboBox_RecordSource.get());
     comboBox_RecordSource->setEditableText (false);
-    comboBox_RecordSource->setJustificationType (Justification::centredLeft);
+    comboBox_RecordSource->setJustificationType (juce::Justification::centredLeft);
     comboBox_RecordSource->setTextWhenNothingSelected (TRANS("Audio Input"));
     comboBox_RecordSource->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     comboBox_RecordSource->addListener (this);
 
     comboBox_RecordSource->setBounds (139, 995, 133, 24);
 
-    label18.reset (new Label ("new label",
-                              TRANS("Source")));
+    label18.reset (new juce::Label ("new label",
+                                    TRANS("Source")));
     addAndMakeVisible (label18.get());
-    label18->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label18->setJustificationType (Justification::centredLeft);
+    label18->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label18->setJustificationType (juce::Justification::centredLeft);
     label18->setEditable (false, false, false);
-    label18->setColour (TextEditor::textColourId, Colours::black);
-    label18->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label18->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label18->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label18->setBounds (32, 995, 88, 24);
 
-    label19.reset (new Label ("new label",
-                              TRANS("Colour")));
+    label19.reset (new juce::Label ("new label",
+                                    TRANS("Colour")));
     addAndMakeVisible (label19.get());
-    label19->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label19->setJustificationType (Justification::centredLeft);
+    label19->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label19->setJustificationType (juce::Justification::centredLeft);
     label19->setEditable (false, false, false);
-    label19->setColour (TextEditor::textColourId, Colours::black);
-    label19->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label19->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label19->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label19->setBounds (32, 1074, 55, 25);
 
-    textButton_RecordColour.reset (new TextButton ("button Border Colour"));
+    textButton_RecordColour.reset (new juce::TextButton ("button Border Colour"));
     addAndMakeVisible (textButton_RecordColour.get());
-    textButton_RecordColour->setButtonText (String());
+    textButton_RecordColour->setButtonText (juce::String());
     textButton_RecordColour->addListener (this);
-    textButton_RecordColour->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_RecordColour->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_RecordColour->setBounds (104, 1074, 53, 24);
 
-    textButton_ImageRecord.reset (new TextButton ("button Back Colour"));
+    textButton_ImageRecord.reset (new juce::TextButton ("button Back Colour"));
     addAndMakeVisible (textButton_ImageRecord.get());
     textButton_ImageRecord->setButtonText (TRANS("Image"));
     textButton_ImageRecord->addListener (this);
-    textButton_ImageRecord->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_ImageRecord->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_ImageRecord->setBounds (184, 1074, 72, 24);
 
-    comboBox_MouseVolumeType.reset (new ComboBox ("new combo box"));
+    comboBox_MouseVolumeType.reset (new juce::ComboBox ("new combo box"));
     addAndMakeVisible (comboBox_MouseVolumeType.get());
     comboBox_MouseVolumeType->setEditableText (false);
-    comboBox_MouseVolumeType->setJustificationType (Justification::centredLeft);
-    comboBox_MouseVolumeType->setTextWhenNothingSelected (String());
+    comboBox_MouseVolumeType->setJustificationType (juce::Justification::centredLeft);
+    comboBox_MouseVolumeType->setTextWhenNothingSelected (juce::String());
     comboBox_MouseVolumeType->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     comboBox_MouseVolumeType->addItem (TRANS("Click & Drag"), 1);
     comboBox_MouseVolumeType->addItem (TRANS("Right Click"), 2);
@@ -411,11 +411,11 @@ SoundOptions::SoundOptions ()
 
     comboBox_MouseVolumeType->setBounds (160, 669, 112, 24);
 
-    comboBox_RecordMouse.reset (new ComboBox ("new combo box"));
+    comboBox_RecordMouse.reset (new juce::ComboBox ("new combo box"));
     addAndMakeVisible (comboBox_RecordMouse.get());
     comboBox_RecordMouse->setEditableText (false);
-    comboBox_RecordMouse->setJustificationType (Justification::centredLeft);
-    comboBox_RecordMouse->setTextWhenNothingSelected (String());
+    comboBox_RecordMouse->setJustificationType (juce::Justification::centredLeft);
+    comboBox_RecordMouse->setTextWhenNothingSelected (juce::String());
     comboBox_RecordMouse->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     comboBox_RecordMouse->addItem (TRANS("Click & Drag"), 1);
     comboBox_RecordMouse->addItem (TRANS("Right Click"), 2);
@@ -424,33 +424,33 @@ SoundOptions::SoundOptions ()
 
     comboBox_RecordMouse->setBounds (139, 1035, 133, 24);
 
-    label20.reset (new Label ("new label",
-                              TRANS("Mouse")));
+    label20.reset (new juce::Label ("new label",
+                                    TRANS("Mouse")));
     addAndMakeVisible (label20.get());
-    label20->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    label20->setJustificationType (Justification::centredLeft);
+    label20->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    label20->setJustificationType (juce::Justification::centredLeft);
     label20->setEditable (false, false, false);
-    label20->setColour (TextEditor::textColourId, Colours::black);
-    label20->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    label20->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    label20->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     label20->setBounds (32, 1035, 88, 24);
 
-    labelFadeState.reset (new Label ("new label",
-                                     TRANS("Initial Env. Fade State")));
+    labelFadeState.reset (new juce::Label ("new label",
+                                           TRANS("Initial Env. Fade State")));
     addAndMakeVisible (labelFadeState.get());
-    labelFadeState->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    labelFadeState->setJustificationType (Justification::centredLeft);
+    labelFadeState->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    labelFadeState->setJustificationType (juce::Justification::centredLeft);
     labelFadeState->setEditable (false, false, false);
-    labelFadeState->setColour (TextEditor::textColourId, Colours::black);
-    labelFadeState->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    labelFadeState->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    labelFadeState->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     labelFadeState->setBounds (24, 102, 152, 25);
 
-    comboBox_FadeState.reset (new ComboBox ("combo Fonts"));
+    comboBox_FadeState.reset (new juce::ComboBox ("combo Fonts"));
     addAndMakeVisible (comboBox_FadeState.get());
     comboBox_FadeState->setEditableText (false);
-    comboBox_FadeState->setJustificationType (Justification::centred);
-    comboBox_FadeState->setTextWhenNothingSelected (String());
+    comboBox_FadeState->setJustificationType (juce::Justification::centred);
+    comboBox_FadeState->setTextWhenNothingSelected (juce::String());
     comboBox_FadeState->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     comboBox_FadeState->addItem (TRANS("Low"), 1);
     comboBox_FadeState->addItem (TRANS("High"), 2);
@@ -458,22 +458,22 @@ SoundOptions::SoundOptions ()
 
     comboBox_FadeState->setBounds (188, 102, 100, 24);
 
-    toggleButton_StopOnEnvelopeEnd.reset (new ToggleButton ("Show Grid"));
+    toggleButton_StopOnEnvelopeEnd.reset (new juce::ToggleButton ("Show Grid"));
     addAndMakeVisible (toggleButton_StopOnEnvelopeEnd.get());
     toggleButton_StopOnEnvelopeEnd->setButtonText (TRANS("Stop on Env. Fade Out"));
     toggleButton_StopOnEnvelopeEnd->addListener (this);
 
     toggleButton_StopOnEnvelopeEnd->setBounds (24, 136, 192, 24);
 
-    textButton_Volume.reset (new TextButton ("button Border Colour"));
+    textButton_Volume.reset (new juce::TextButton ("button Border Colour"));
     addAndMakeVisible (textButton_Volume.get());
-    textButton_Volume->setButtonText (String());
+    textButton_Volume->setButtonText (juce::String());
     textButton_Volume->addListener (this);
-    textButton_Volume->setColour (TextButton::buttonColourId, Colour (0xff001da8));
+    textButton_Volume->setColour (juce::TextButton::buttonColourId, juce::Colour (0xff001da8));
 
     textButton_Volume->setBounds (92, 28, 92, 24);
 
-    toggleButton_ColoursToFont.reset (new ToggleButton ("Show Grid"));
+    toggleButton_ColoursToFont.reset (new juce::ToggleButton ("Show Grid"));
     addAndMakeVisible (toggleButton_ColoursToFont.get());
     toggleButton_ColoursToFont->setTooltip (TRANS("Use the above colours for the object name font instead."));
     toggleButton_ColoursToFont->setButtonText (TRANS("Above Colours To Label"));
@@ -553,16 +553,16 @@ SoundOptions::~SoundOptions()
 }
 
 //==============================================================================
-void SoundOptions::paint (Graphics& g)
+void SoundOptions::paint (juce::Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff323e44));
+    g.fillAll (juce::Colour (0xff323e44));
 
     {
         int x = 7, y = 16, width = 304, height = 152;
-        Colour fillColour = Colour (0x2a11126f);
+        juce::Colour fillColour = juce::Colour (0x2a11126f);
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
@@ -571,7 +571,7 @@ void SoundOptions::paint (Graphics& g)
 
     {
         int x = 23, y = 944, width = 269, height = 160;
-        Colour fillColour = Colour (0x2a11126f);
+        juce::Colour fillColour = juce::Colour (0x2a11126f);
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
@@ -580,7 +580,7 @@ void SoundOptions::paint (Graphics& g)
 
     {
         int x = 14, y = 312, width = 288, height = 160;
-        Colour fillColour = Colour (0x2a11126f);
+        juce::Colour fillColour = juce::Colour (0x2a11126f);
         //[UserPaintCustomArguments] Customize the painting arguments here..
         //[/UserPaintCustomArguments]
         g.setColour (fillColour);
@@ -600,7 +600,7 @@ void SoundOptions::resized()
     //[/UserResized]
 }
 
-void SoundOptions::buttonClicked (Button* buttonThatWasClicked)
+void SoundOptions::buttonClicked (juce::Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
 
@@ -950,7 +950,7 @@ void SoundOptions::buttonClicked (Button* buttonThatWasClicked)
     //[/UserbuttonClicked_Post]
 }
 
-void SoundOptions::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
+void SoundOptions::comboBoxChanged (juce::ComboBox* comboBoxThatHasChanged)
 {
     //[UsercomboBoxChanged_Pre]
 
